@@ -6262,6 +6262,25 @@ h6::before {
   -webkit-animation: ccc 6s linear infinite;
   animation: ccc 6s linear infinite;
 }
+div#runtime {
+    width: fit-content;
+    color: #fff;
+    padding: 0 10px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    
+    /* 下面是为了底部剧中显示 */
+    position: absolute;    /* 使用固定定位 */
+    left: 50%;          /* 从左边开始计算50% */
+    bottom: 10px;       /* 距离底部10像素 */
+    transform: translateX(-50%); /* 使用transform来确保完全居中 */
+}
+
+
+[data-theme="dark"] div#runtime {
+    color: #28b4c8;
+    box-shadow: 0 0 5px rgba(28, 69, 218, 0.71);
+}
 .search-dialog {
   position: fixed;
   top: 10%;
