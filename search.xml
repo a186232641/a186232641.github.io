@@ -45,9 +45,9 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/Feilong.github.io/categories/index.html"/>
-      <url>/Feilong.github.io/categories/index.html</url>
+      <title>标签</title>
+      <link href="/Feilong.github.io/tags/index.html"/>
+      <url>/Feilong.github.io/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -56,9 +56,9 @@
     
     
     <entry>
-      <title>标签</title>
-      <link href="/Feilong.github.io/tags/index.html"/>
-      <url>/Feilong.github.io/tags/index.html</url>
+      <title>分类</title>
+      <link href="/Feilong.github.io/categories/index.html"/>
+      <url>/Feilong.github.io/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
