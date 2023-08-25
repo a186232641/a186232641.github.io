@@ -6077,27 +6077,7 @@ body {
   background: linear-gradient(90deg, #48778d, #8397a0);
 }
 /*背景渐变 */
-/* 代码美化 */
-#article-container figure.highlight,
-#article-container pre {
-    color: #aaa8a3;
-    background: #f3f3f3    /*中间代码的背景颜色*/
-}
 
-#article-container figure.highlight .highlight-tools {
-    color: #e9b125;
-    background: #eee
-}
-
-#article-container figure.highlight .gutter pre {
-    color: hsla(30, 1%, 74%, 0.952);
-    background: #f3f3f3
-}
-
-#article-container figure.highlight figcaption a {
-    color: #f3f3f3 !important
-}
-/* 代码美化 */
 
 /* 波浪css */
 .main-hero-waves-area {
