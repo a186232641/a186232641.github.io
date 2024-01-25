@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>mac登录天坑</title>
+      <link href="/2024/01/25/mac%E7%99%BB%E5%BD%95%E5%A4%A9%E5%9D%91/"/>
+      <url>/2024/01/25/mac%E7%99%BB%E5%BD%95%E5%A4%A9%E5%9D%91/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h1><p>之间一直连接远程GPU进行深度学习训练，因为不是本机的GPU所以需要在平台进行租用。GPU平台可以配置公钥，从而避免了本机上传公钥，配置好公钥后还是要求输入私钥的密码。这就是mac的天坑。还好最后解决了</p><h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ol><li>检查是否已存在公私钥对</li></ol><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh  </span><br><span class="line"># 更换目录到 ~/.ssh</span><br><span class="line">ls             </span><br><span class="line"># 查看当前目录公私钥文件</span><br></pre></td></tr></table></figure><ol><li>生成公私钥对<strong>（可选步骤）</strong></li></ol><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen  </span><br><span class="line"># 根据交互，输入你想要的名字（默认id_rsa）</span><br><span class="line"># 然后是passphrase，设置为空即可。这样就生成了一对公私钥  </span><br><span class="line">ls                </span><br><span class="line"># 这时候当前目录下会多了一对公私钥对。</span><br></pre></td></tr></table></figure><p>3.上传公钥到服务器</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id -i [公钥文件] user@host </span><br><span class="line"># user是你的ssh的用户，host是服务器地址，这时候还要输入密码。</span><br><span class="line"># 例子：ssh-copy-id -i id_rsa.pub root@111.111.111.111</span><br></pre></td></tr></table></figure><ol><li><p>ssh-add<strong>（mac的坑点）</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-add -K [你的私钥文件，就是那个不加.pub结尾的文件] </span><br><span class="line"># 例如，ssh-add -K id_rsa</span><br><span class="line"></span><br></pre></td></tr></table></figure></li></ol><p>最后完美解决，终于不用在vs code中输入密码了。😭😭</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>英语六级复习指南，我真是个菜鸡，这次一定要过</title>
       <link href="/2023/08/29/%E8%8B%B1%E8%AF%AD%E5%85%AD%E7%BA%A7%E5%A4%8D%E4%B9%A0%E6%8C%87%E5%8D%97%EF%BC%8C%E6%88%91%E7%9C%9F%E6%98%AF%E4%B8%AA%E8%8F%9C%E9%B8%A1%EF%BC%8C%E8%BF%99%E6%AC%A1%E4%B8%80%E5%AE%9A%E8%A6%81%E8%BF%87/"/>
       <url>/2023/08/29/%E8%8B%B1%E8%AF%AD%E5%85%AD%E7%BA%A7%E5%A4%8D%E4%B9%A0%E6%8C%87%E5%8D%97%EF%BC%8C%E6%88%91%E7%9C%9F%E6%98%AF%E4%B8%AA%E8%8F%9C%E9%B8%A1%EF%BC%8C%E8%BF%99%E6%AC%A1%E4%B8%80%E5%AE%9A%E8%A6%81%E8%BF%87/</url>
