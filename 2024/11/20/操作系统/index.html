@@ -1,0 +1,283 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>操作系统 | 不会码字的程序猿</title><meta name="author" content="FeiLong"><meta name="copyright" content="FeiLong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="物理层将两台 PC 机通过网卡用网线直接连接，应该采用哪种类型的双绞线？ 以太网双绞连接线有两种：一种是广泛使用的直连接线，另一种是特殊情况下使用的交叉线，如果是pc连接交换机或其他网络接口等，或是其它连接的双方地位不对等的情况下都使用直连接线，而如果连接的两台设备是对等的，例如都是两台pc机，笔记本等，就要使用交叉线了，两者的差别是线序不一致，接口是一样的。   标准568A：绿白-1，绿-2，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统">
+<meta property="og:url" content="https://a186232641.github.io/2024/11/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="不会码字的程序猿">
+<meta property="og:description" content="物理层将两台 PC 机通过网卡用网线直接连接，应该采用哪种类型的双绞线？ 以太网双绞连接线有两种：一种是广泛使用的直连接线，另一种是特殊情况下使用的交叉线，如果是pc连接交换机或其他网络接口等，或是其它连接的双方地位不对等的情况下都使用直连接线，而如果连接的两台设备是对等的，例如都是两台pc机，笔记本等，就要使用交叉线了，两者的差别是线序不一致，接口是一样的。   标准568A：绿白-1，绿-2，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://a186232641.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2024-11-20T12:43:00.000Z">
+<meta property="article:modified_time" content="2024-11-20T14:32:58.682Z">
+<meta property="article:author" content="FeiLong">
+<meta property="article:tag" content="程序猿">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://a186232641.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://a186232641.github.io/2024/11/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '操作系统',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-11-20 22:32:58'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/banner.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="不会码字的程序猿"><span class="site-name">不会码字的程序猿</span></a></span><div id="menus"></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">操作系统</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-11-20T12:43:00.000Z" title="发表于 2024-11-20 20:43:00">2024-11-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-11-20T14:32:58.682Z" title="更新于 2024-11-20 22:32:58">2024-11-20</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="操作系统"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h1><p>将两台 PC 机通过网卡用网线直接连接，应该采用哪种类型的双绞线？</p>
+<p>以太网双绞连接线有两种：一种是广泛使用的直连接线，另一种是特殊情况下使用的交叉线，如果是pc连接交换机或其他网络接口等，或是其它连接的双方地位不对等的情况下都使用<strong>直连接线</strong>，而如果连接的两台设备是对等的，例如都是两台pc机，笔记本等，就要使用<strong>交叉线</strong>了，两者的差别是线序不一致，接口是一样的。 </p>
+<p> 标准568A：绿白-1，绿-2，橙白-3，蓝-4，蓝白-5，橙-6，棕白-7，棕-8。 </p>
+<p>  标准568B：橙白-1，橙-2，绿白-3，蓝-4，蓝白-5，绿-6，棕白-7，棕-8。 </p>
+<p>  两端都是568A或者568B的双绞线是直通线；一端是568A，一端是568B的双绞线是交叉线。</p>
+<p><strong>快速以太网</strong>是指100Mbps速率以上的<br>  单模光纤传输适合距离远，不会色散，传输可靠，但仅一个模式； </p>
+<p>  多模光纤传输适合短距离，可以多个模式传输，但会发生色散，不够可靠；</p>
+<p>串行通信：串行通信是指 使用一条数据线，将数据一位一位地依次传输，每一位数据占据一个固定的时间长度。其只需要少数几条线就可以在系统间交换信息，特别适用于计算机与计算机、计算机与外设之间的<strong>远距离通信</strong>。   </p>
+<p>​    并行是指多比特数据同时通过并行线进行传送，这样数据传送<strong>速度大大提高</strong>，但并行传送的线路长度受到限制，因为长度增加，干扰就会增加，数据也就容易出错。   </p>
+<p>路由器、网桥和集线器分别工作于网络层、数据链路层和物理层</p>
+<p>路由器可以隔绝广播域，也可以隔绝冲突域，交换机只能隔绝冲突域，不能隔绝广播域。集线器只起信号发达和转发的作用。  </p>
+<p>  1、骨干网：它由所有用户共享，负责传输骨干数据流。 </p>
+<p>   2、接入网：提供通常说的最后一公里的连接——即用户和骨干网络之间的连接。 </p>
+<p>T1载波的数据速率是1.544Mbps</p>
+<p> E1载波的数据速率是2.048Mbps，<br> E2载波数据速率为8.448Mbps，<br> E3载波数据速率为34.368Mbps，<br> E4载波数据速率为139.24Mbps，<br> E5载波数据速率为565.148Mbps</p>
+<p>  电路交换具有以下优缺点： </p>
+<p>​    <strong>优点</strong>： （1）由于通信线路为通信双方用户专用，数据直达，所以传输数据的时延非常小。 （2）通信双方之间的屋里通路一旦建立，双方可以随时通信，实时性强。（3）双方通信时按发送顺序传送数据，不存在失序问题。（4）电路交换既适用于传输模拟信号，也适用于传输数字信号。（5）电路交换的交换设备及控制均比较简单。 </p>
+<p>​    分组交换具有以下优缺点。  </p>
+<p>​     <strong>优点</strong>：（1）分组交换不需要为通信双反预先建立一条专用的通信线路，不存在连接建立时延，用户可随时发送分组。（2）由于采用存储转发方式，加之交换节点具有路径选择，当某条传输线路故障时可选择其他传输线路，提高了传输的可靠性。（3）通信双反不是固定的战友一条通信线路，而是在不同的时间一段一段地部分占有这条物理通路，因而大大提高了通信线路的利用率。（4）加速了数据在网络中的传输。因而分组是逐个传输，可以使后一个分组的存储操作与前一个分组的转发操作并行，这种流水线式传输方式减少了传输时间。（5）分组长度固定，相应的缓冲区的大小也固定，所以简化了交换节点中存储器的管理。（6）分组较短，出错几率减少，每次重发的数据量也减少，不仅提高了可靠性，也减少了时延。  </p>
+<p>同轴电缆 只能数字信号。</p>
+<p>  双绞线（twisted pair，TP） 双绞线，模拟信号，数字信号。</p>
+<p>  屏蔽双绞线（英语：Shielded Twisted Pair，STP）,是一种广泛用于数据传输的铜质双绞线。 </p>
+<p>  非屏蔽双绞线(UTP：Unshilded Twisted Pair) </p>
+<p>Cisco路由器用于查看路由表信息的命令是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">show run//看运行状况</span><br><span class="line">show ip route//看路由表 show int//看断口*</span><br><span class="line">show ip int br//看端口ip地址 show cdp nei//察看cdp邻居</span><br><span class="line">show ip pro//察看ip协议</span><br></pre></td></tr></table></figure>
+
+<h1 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h1><p>MAC地址也叫物理地址、硬件地址或链路地址，MAC地址则是48位的，IP地址才是32位的</p>
+<p>MAC 地址是由 48 位二进制数组成，通常表示为 12 个十六进制数，每两个十六进制数为一组，中间用冒号或减号分隔。   </p>
+<p><strong>网桥</strong>连接不同网段，是数据链路层设备，可以隔绝碰撞域    </p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20200217/969156946_1581908541437_131FA92C75D60B62AFCDCCF2872A039F" alt="img"></p>
+<p>数据链路层一般都提供3种基本服务，即无确认的无连接服务、有确认的无连接服务、有确认 的面向连接的服务。 </p>
+<p>  （1）无确认的无连接服务 无确认的无连接服务是源机器向目的机器发送独立的帧，而目的机器对收到的帧不作确认。 如果由于线路上的噪声而造成帧丢失，数据链路层不作努力去恢复它，恢复工作留给上层去完成。 这类服务适用于误码率很低的情况，也适用于像语音之类的实时传输，实时传输情况下有时数据延误比数据损坏影响更严重。 大多数局域网在数据链路层都使用无确认的无连接服务。 </p>
+<p>  （2）有确认的无连接服务 这种服务仍然不建立连接，但是所发送的每一帧都进行单独确认。 以这种方式，发送方就会知道帧是否正确地到达。如果在某个确定的时间间隔内，帧没有到达，就必须重新发此帧。  </p>
+<p>  （3）有确认的面向连接的服务 采用这种服务，源机器和目的机器在传递任何数据之前，先建立一条连接。 在这条连接上所发送的每一帧都被编上号，数据链路层保证所发送的每一帧都确实已收到。 而且，它保证每帧只收到一次，所有的帧都是按正确顺序收到的。面向连接的服务为网络进程间提供了可靠地传送比特流的服务。</p>
+<p> IEEE 802.1—概述、体系结构和网络互连，以及网络管理和性能测量。</p>
+<p> IEEE 802.2—逻辑链路控制LLC。最高层协议与任何一种局域网MAC子层的接口。</p>
+<p> IEEE 802.3—CSMA&#x2F;CD网络，定义CSMA&#x2F;CD总线网的MAC子层和物理层的规范。</p>
+<p> IEEE 802.4—令牌总线网。定义令牌传递总线网的MAC子层和物理层的规范。</p>
+<p> IEEE 802.5—令牌环形网。定义令牌传递环形网的MAC子层和物理层的规范。</p>
+<p> IEEE 802.6—城域网。</p>
+<p> IEEE 802.7—宽带技术。</p>
+<p> IEEE 802.8—光纤技术。</p>
+<p> IEEE 802.9—综合话音数据局域网。</p>
+<p> IEEE 802.10—可互操作的局域网的安全。</p>
+<p> IEEE 802.11—无线局域网。</p>
+<p> IEEE 802.12—优先高速局域网(100Mb&#x2F;s)。</p>
+<p> IEEE 802.13—有线电视(Cable-TV)</p>
+<h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><p>逆地址解析协议（Reverse Address Resolution Protocol，RARP），是一种网络协议，互联网工程任务组（IETF）在RFC903中描述了RARP[1]。RARP使用与ARP相同的报头结构，作用与ARP相反。RARP用于将MAC地址转换为IP地址。其因为较限于IP地址的运用以及其他的一些缺点，因此渐为更新的BOOTP或DHCP所取代。<br>RARP的工作原理：</p>
+<ol>
+<li>发送主机发送一个本地的RARP广播，在此广播包中，声明自己的MAC地址并且请求任何收到此请求的RARP服务器分配一个IP地址；</li>
+<li>本地网段上的RARP服务器收到此请求后，检查其RARP列表，查找该MAC地址对应的IP地址；</li>
+<li>如果存在，RARP服务器就给源主机发送一个响应数据包并将此IP地址提供给对方主机使用；</li>
+<li>如果不存在，RARP服务器对此不做任何的响应；</li>
+<li>源主机收到从RARP服务器的响应信息，就利用得到的IP地址进行通讯；如果一直没有收到RARP服务器的响应信息，表示初始化失败</li>
+</ol>
+<p><img src="https://uploadfiles.nowcoder.com/files/20200802/963196997_1596363041239_20200802181023.png" alt="img"></p>
+<p>IPv6首部的40字节包含以下字段：</p>
+<ul>
+<li>版本号：4位</li>
+<li>通信量类：8位</li>
+<li>流标签：20位</li>
+<li>有效载荷长度：16位</li>
+<li>下一个首部：8位</li>
+<li>跳数限制：8位</li>
+<li>源地址：128位（16字节）</li>
+<li>目的地址：128位（16字节）</li>
+</ul>
+<p>网络中的三大表 MAC表 链路层交换机维护，记录着MAC地址与交换机接口的对应关系&hellip; ARP表 主机维护，ARP协议是网络层协议，负责ip地址与mac地址的映射 路由表，这个大家都懂，可以用netstat -r 或route查看</p>
+<p>OSPF(Open Shortest Path First<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BC%80%E6%94%BE%E5%BC%8F%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E4%BC%98%E5%85%88">开放式最短路径优先</a>）是一个<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%86%85%E9%83%A8%E7%BD%91%E5%85%B3%E5%8D%8F%E8%AE%AE">内部网关协议</a>(Interior Gateway Protocol，简称IGP），用于在单一<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%87%AA%E6%B2%BB%E7%B3%BB%E7%BB%9F">自治系统</a>（autonomous system,AS）内决策<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%B7%AF%E7%94%B1">路由</a>。是对<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE">链路状态路由协议</a>的一种实现，隶属内部网关协议（IGP），故运作于自治系统内部。著名的迪克斯加算法(Dijkstra)被用来计算最短路径树。OSPF分为OSPFv2和OSPFv3两个版本,其中OSPFv2用在<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/IPv4">IPv4</a>网络，OSPFv3用在<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/IPv6">IPv6</a>网络。OSPFv2是由RFC 2328定义的，OSPFv3是由RFC 5340定义的。与<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/RIP">RIP</a>相比，OSPF是链路状态协议，而RIP是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%B7%9D%E7%A6%BB%E7%9F%A2%E9%87%8F%E5%8D%8F%E8%AE%AE">距离矢量协议</a>。</p>
+<p>OSPF（Open Shortest Path First打开最短路径）是内部网关协议。 BGP (Border Gateway Protocol边界网关协议)，是用于交换Internet路由信息的外部网关协议。 </p>
+<p>网络层提供的是一种无连接、不可靠但尽力而为的数据报传输服务，将数据报从原主机传送到目的主机。 </p>
+<h1 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h1><p><img src="https://uploadfiles.nowcoder.com/images/20170816/891535_1502864700025_4308DBEC28931D574B5E88B33BBCC75B" alt="img"></p>
+<h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><p>Telnet是位于OSI模型的第7层—应用层上的一种协议，是一个通过创建虚拟终端提供连接到远程主机终端仿真的TCP&#x2F;IP协议。这一协议需要通过用户名和口令进行认证，是Internet远程登陆服务的标准协议。应用Telnet协议能够把本地用户所使用的计算机变成远程主机系统的一个终端 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SMTP：简单邮件传输协议，使用TCP连接，端口号为25，</span><br><span class="line">SNMP：简单网络管理协议，使用UDP 161端口</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SNMP:(Simple Network Management Protocol)简单网络管理协议, 是专门设计用于在 IP 网络管理网络节点（服务器、工作站、路由器、交换机及HUBS等）的一种标准协议，它是一种应用层协议。 SNMP 使网络管理员能够管理网络效能，发现并解决网络问题以及规划网络增长。通过 SNMP 接收随机消息（及事件报告）网络管理系统获知网络出现问题。</span><br><span class="line">SNMP是一系列协议组和规范，它们提供了一种从网络上的设备中收集网络管理信息的方法，也为设备向网络管理工作站报告问题和错误提供了一种方法。</span><br></pre></td></tr></table></figure>
+
+<p><strong>SNMP基于传输层UDP用户数据报协议</strong>，在管理者和被管理设备（确切的说是agent）之前传递信息。<br>SNMP管理包括下面三个部分：<br>1.MIB管理信息库<br>2.SMI管理信息的结构和标识（也称管理信息接口SMI）<br>3.SNMP简单网络管理协议</p>
+<p>DNS：</p>
+<p>最少情况：当本机DNS高速缓存中有该域名的DNS信息时，则不需要查询任何域名服务器，最少发出0次DNS查询。最多情况：因为均采用迭代查询方式，在最坏情况下，本地域名服务器需要依次迭代地向根域名服务器、顶级域名服务器（.com）、权限域名服务器（xyz.com）、权限域名服务器（abc.xyz.com）发出DNS查询请求，因此最多发出4次DNS查询。  </p>
+<h1 id="网络安全"><a href="#网络安全" class="headerlink" title="网络安全"></a>网络安全</h1><p>**MITM:**通过各种技术手段将受入侵者控制的一台计算机虚拟放置在网络连接中的两台通信计算机之间，这台计算机就称为“中间人”。 </p>
+<p>  <strong>钓鱼攻击：</strong>一种企图从电子通讯中，<strong>通过伪装成信誉卓著的法人媒体以获得如用户名、密码和信用卡明细等个人敏感信息的犯罪诈骗过程。</strong>这些通信都声称（自己）来自社交网站拍卖网站\网络银行、电子支付网站\或网络管理者，以此来诱骗受害人的轻信。网钓通常是通过e-mail或者即时通讯进行。它常常导引用户到URL与界面外观与真正网站几无二致的假冒网站输入个人数据。就算使用强式加密的SSL服务器认证，要侦测网站是否仿冒实际上仍很困难。 </p>
+<p>  <strong>水坑攻击</strong>：在受害者必经之路设置了一个“**水坑(陷阱)**”。最常见的做法是，黑客分析攻击目标的上网活动规律，寻找攻击目标经常访问的网站的弱点，先将此网站“攻破”并植入攻击代码，一旦攻击目标访问该网站就会“中招”。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://a186232641.github.io">FeiLong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://a186232641.github.io/2024/11/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">https://a186232641.github.io/2024/11/20/操作系统/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://a186232641.github.io" target="_blank">不会码字的程序猿</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/11/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%90%86%E8%AE%BA/" title="数据库理论"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">数据库理论</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">FeiLong</div><div class="author-info__description">这是我的博客网站</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/a186232641"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/a186232641" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:a186232641@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82"><span class="toc-number">1.</span> <span class="toc-text">物理层</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="toc-number">2.</span> <span class="toc-text">数据链路层</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="toc-number">3.</span> <span class="toc-text">网络层</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="toc-number">4.</span> <span class="toc-text">传输层</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82"><span class="toc-number">5.</span> <span class="toc-text">应用层</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8"><span class="toc-number">6.</span> <span class="toc-text">网络安全</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="footer_custom_text"><p><a style="margin-inline:5px"target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为 Hexo" alt="HEXO"></a><a style="margin-inline:5px"target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用 Butterfly" alt="Butterfly"></a><a style="margin-inline:5px"target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由 GitHub 托管" alt="GitHub"></a><a style="margin-inline:5px"target="_blank"href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" alt="img" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><script async src="//at.alicdn.com/t/font_2264842_3izu8i5eoc2.js"></script><script async src="/js/custom.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
