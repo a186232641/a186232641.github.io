@@ -1,0 +1,603 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>计算机组成原理 | 不会码字的程序猿</title><meta name="author" content="FeiLong"><meta name="copyright" content="FeiLong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="计算机系统概述 1.1 计算机发展历程1.1.1 计算机硬件的发展计算机系统&#x3D;硬件+软件 摩尔定律，集成电路上的晶体管数量每18月就会翻一翻，所以每18月计算机的处理效率就会提高一倍。  1.2 计算机系统层次结构 计算机硬件的基本组成 冯诺曼体系结构特点: 计算机硬件系统由五大部件组成(存储器、运算器、控制器、输出设备、输入设备) 指令和数据以同等地位存于存储器，可按地址寻访 指令和数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机组成原理">
+<meta property="og:url" content="https://a186232641.github.io/2024/11/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/index.html">
+<meta property="og:site_name" content="不会码字的程序猿">
+<meta property="og:description" content="计算机系统概述 1.1 计算机发展历程1.1.1 计算机硬件的发展计算机系统&#x3D;硬件+软件 摩尔定律，集成电路上的晶体管数量每18月就会翻一翻，所以每18月计算机的处理效率就会提高一倍。  1.2 计算机系统层次结构 计算机硬件的基本组成 冯诺曼体系结构特点: 计算机硬件系统由五大部件组成(存储器、运算器、控制器、输出设备、输入设备) 指令和数据以同等地位存于存储器，可按地址寻访 指令和数">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://a186232641.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2024-11-22T01:40:01.000Z">
+<meta property="article:modified_time" content="2024-11-26T15:46:05.639Z">
+<meta property="article:author" content="FeiLong">
+<meta property="article:tag" content="程序猿">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://a186232641.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://a186232641.github.io/2024/11/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '计算机组成原理',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-11-26 23:46:05'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/banner.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="不会码字的程序猿"><span class="site-name">不会码字的程序猿</span></a></span><div id="menus"></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">计算机组成原理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-11-22T01:40:01.000Z" title="发表于 2024-11-22 09:40:01">2024-11-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-11-26T15:46:05.639Z" title="更新于 2024-11-26 23:46:05">2024-11-26</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="计算机组成原理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="计算机系统概述"><a href="#计算机系统概述" class="headerlink" title="计算机系统概述"></a>计算机系统概述</h1><p><img src="https://i-blog.csdnimg.cn/blog_migrate/222fe425475cf2e344f09d4985d0947a.png" alt="在这里插入图片描述"></p>
+<h3 id="1-1-计算机发展历程"><a href="#1-1-计算机发展历程" class="headerlink" title="1.1 计算机发展历程"></a>1.1 计算机发展历程</h3><h3 id="1-1-1-计算机硬件的发展"><a href="#1-1-1-计算机硬件的发展" class="headerlink" title="1.1.1 计算机硬件的发展"></a>1.1.1 计算机硬件的发展</h3><p>计算机系统&#x3D;<strong>硬件+软件</strong></p>
+<p>摩尔定律，<strong>集成电路上的晶体管数量每18月就会翻一翻</strong>，所以每18月计算机的处理效率就会提高一倍。</p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411241323638.png" alt="image-20241124132336492"></p>
+<h2 id="1-2-计算机系统层次结构"><a href="#1-2-计算机系统层次结构" class="headerlink" title="1.2 计算机系统层次结构"></a>1.2 计算机系统层次结构</h2><p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411241323360.png" alt="image-20241124132317759"></p>
+<h3 id="计算机硬件的基本组成"><a href="#计算机硬件的基本组成" class="headerlink" title="计算机硬件的基本组成"></a>计算机硬件的基本组成</h3><ul>
+<li>冯诺曼体系结构特点:<ul>
+<li>计算机硬件系统由五大部件组成(<strong>存储器、运算器、控制器、输出设备、输入设备</strong>)</li>
+<li><strong>指令和数据以同等地位存于存储器</strong>，可按地址寻访</li>
+<li><strong>指令和数据用二进制表示</strong></li>
+<li><strong>指令由操作码和地址码组成</strong></li>
+<li>存储程序</li>
+<li>以<strong>运算器</strong>为中心</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/c1e19b556dfdb19218953d62f26064fd.png" alt="在这里插入图片描述"></p>
+<ul>
+<li><h5 id="现代计算机的组织结构"><a href="#现代计算机的组织结构" class="headerlink" title="现代计算机的组织结构"></a>现代计算机的组织结构</h5></li>
+</ul>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/c26b5953b18fb5ad6035c76b44073080.png" alt="在这里插入图片描述"></p>
+<ul>
+<li><p>&lt;1&gt; 输入设备，是指将外部信息以计算机能读懂的方式输入进来，如键盘，鼠标等</p>
+</li>
+<li><p>&lt;2&gt; 输出设备，就是将计算机处理的信息以人所能接受的方式输出出来，比如显示屏，打印机。</p>
+</li>
+<li><p>&lt;3&gt; 存储器，存储器分为 主存储器(内存储器，CPU能直接访问)和 辅助存储器(外存储器，协助主存储器记忆更多的信息，辅助存储器的信息需要导入到主存储器中，才可以被CPU访问)。</p>
+<p><strong>主存储器</strong>的工作方式是按存储单元的地址进行存取，这种存取方式称为按地址存取方式(<strong>相联存储器</strong>既可以既可以按照<strong>地址寻址</strong>，又可以按照<strong>内容寻址</strong>，为了与传统存储器区别，又称为<strong>内容寻址的存储器</strong>！)</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/309a748b65828c9af3944a37602e37a3.png" alt="在这里插入图片描述"></p>
+<p>&lt;4&gt; 运算器，是计算机的运算单元，用于算术运算和逻辑运算，运算器的核心单元是算术逻辑单元(ALU)</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/59370b5b078eef087414167b20a06ca6.png" alt="在这里插入图片描述"></p>
+</li>
+</ul>
+<p>&lt;5&gt; 控制器，控制器是计算机的指挥中心，有其指挥各部件自动协调第进行工作，现代计算机将<strong>运算器和控制器</strong>集成到一个芯片上，合成为中央处理器，简称CPU。有程序计数器(PC)、指令寄存器(IR)和控制单元(CU)。</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/41438ab8fcd23f311c5b1013a4abe6bf.png" alt="在这里插入图片描述"></p>
+<p>按照指令和数据流可以分为：</p>
+<ul>
+<li>单指令流和单数据流系统（SISD），即传统的冯·诺依曼体系结构。</li>
+<li>单指令流和多数据流系统（SIMD），包括阵列处理器和向量处理器系统。</li>
+<li>多指令流和单数据流系统（MISD），这种计算机实际上不存在。</li>
+<li>多指令流和多数据流系统（MIMD），包括多处理器和计算机系统。</li>
+</ul>
+<h4 id="1-2-3-计算机软件的分类"><a href="#1-2-3-计算机软件的分类" class="headerlink" title="1.2.3 计算机软件的分类"></a>1.2.3 计算机软件的分类</h4><h5 id="系统软件和应用软件"><a href="#系统软件和应用软件" class="headerlink" title="系统软件和应用软件"></a>系统软件和应用软件</h5><ol>
+<li>计算机软件，一般分为系统软件和应用软件<ul>
+<li>系统软件包括 <strong>操作系统，数据库管理系统，语言处理系统(比如编译器)，分布式软件系统，网络软件系统，标准库系统，服务性系统</strong>(比如连接程序)。</li>
+<li>应用软件包括各种科学计算类程序，工程设计类程序，数据统计与处理程序。</li>
+</ul>
+</li>
+</ol>
+<h5 id="三个级别的语言"><a href="#三个级别的语言" class="headerlink" title="三个级别的语言"></a>三个级别的语言</h5><ul>
+<li>1)<strong>机器语言</strong>。又称二进制代码语言，需要编程人员记忆每条指令的二进制编码。机器语言是计算机唯一可以直接识别和执行的语言。</li>
+<li>2)<strong>汇编语言</strong>。汇编语言用英文单词或其缩写代替二进制的指令代码，更容易为人们记忆和理解。使用汇编语言编辑的程序，必须经过一个称为汇编程序的系统软件的翻译，将其转换为计算机的机器语言后，才能在计算机的硬件系统上执行。</li>
+<li>3)<strong>高级语言</strong>。高级语言(如C、C++、Java等)是为方便程序设计人员写出解决问题的处理方案和解题过程的程序。通常高级语言需要经过编译程序编译成汇编语言程序，然后经过汇编操作得到机器语言程序，或直接由高级语言程序翻译成机器语言程序。</li>
+</ul>
+<p>由<strong>高级语言转换到汇编语言</strong>的过程叫做<strong>编译</strong>，由<strong>汇编语言转换到机器语言</strong>的过程叫做<strong>汇编</strong>，边翻译边执行的叫做解析。</p>
+<h3 id="计算机的工作过程"><a href="#计算机的工作过程" class="headerlink" title="计算机的工作过程"></a>计算机的工作过程</h3><p><img src="https://i-blog.csdnimg.cn/blog_migrate/d82f6c97ea5a51a3346a3a42b85df158.png" alt="在这里插入图片描述"></p>
+<p>IR存放当下<strong>欲执行的指令</strong>；PC存放<strong>下一条指令的地址</strong>；</p>
+<p>MAR存放<strong>欲访问的存储单元地址</strong>；MDR存放<strong>从存储单元取来的数据</strong>！</p>
+<p>地址译码器是<strong>主存的构成部分，不属于CPU</strong>；地址寄存器虽然一般属于主存，但是现代计算机中绝大多数CPU内集成了地址寄存器！</p>
+<p>关于CPU存取速度的比较：寄存器（CPU内部）&gt; Cache(高速的SRAM) &gt; 内存 （SDRAM）</p>
+<h3 id="计算机性能指标"><a href="#计算机性能指标" class="headerlink" title="计算机性能指标"></a>计算机性能指标</h3><p><img src="https://i-blog.csdnimg.cn/blog_migrate/ee87767dc4377de8c9b2d8ede73410d4.png" alt="在这里插入图片描述"></p>
+<ol>
+<li>机器字长<br>计算机的位数（机器字长），表示<strong>计算机进行一次整数运算(即定点整数运算)所能处理的二进制数据的位数</strong>。计算机字长通常选定为字节(8位)的整数倍，通常是2,4,8倍。不同的计算机，字节可能不同</li>
+</ol>
+<blockquote>
+<p>机器字长、指令字长、存储字长的区别和联系是什么？</p>
+<ul>
+<li><p><strong>机器字长</strong>：计算机能直接处理的二进制数据的位数，机器字长<strong>一般等于内部寄存器的大小</strong>，它决定了<strong>计算机的运算精度</strong>。</p>
+</li>
+<li><p>指令字长：一个<strong>指令</strong>字中包含的二进制代码的位数。</p>
+</li>
+<li><p>存储字长：一个存储单元存储的二进制代码的长度。<strong>等于MDR的位数</strong>， 它们都必须是字节的整数倍。</p>
+</li>
+<li><p>数据字长：<strong>数据总线一次能传送信息的位数</strong>，它可以不等于MDR的位数。</p>
+<p>指令字长一般取存储字长的整数倍，若指令字长等于存储字长的2倍，则需要2次访存来取出一条指令，因此取指周期为机器周期的2倍；若指令字长等于存储字长，则取指周期等于机器周期。</p>
+<p>早期的计算机存储字长一般和机器的指令字长与数据字长相等，因此访问一次主存便可取出一条指令或一个数据。随着计算机的发展，指令字长可变，数据字长也可变，但它们必须都是字节的整数倍。</p>
+<p>请注意64位操作系统是指特别为64位架构的计算机而设计的操作系统，它能够利用64位处理器的优势。但64位机器既可以使用64位操作系统，又可以使用32位操作系统。而32位处理器是无法使用64位操作系统的。。</p>
+</li>
+</ul>
+</blockquote>
+<ol start="2">
+<li><p>数据通路带宽:数据总线一次所能传送信息的位数.</p>
+</li>
+<li><p>主存容量MAR的位数反映存储单元的个数，如MAR为16位，表示存储单元为2^16 &#x3D; 64K;若MDR为32位，则存储容量为2^16x32.</p>
+</li>
+<li><p>运算速度</p>
+<ol>
+<li><p>吞吐量，指系统在单位时间内处理请求的数量 ；从用户观点看，它是评价计算机系统性能的综合参数！</p>
+<p>响应时间，指从用户向计算机发送一个请求，到系统对该请求做出响应并获得所需结构的等待时间。</p>
+</li>
+<li><p>CPU时钟周期。通常为节拍脉冲或T周期，即主频的倒数，它是CPU中最小的时间单位，每个动作至少需要1个时钟周期。1&#x2F;f</p>
+<p>主频(CPU时钟频率)。机器内部主时钟的频率，是衡量机器速度的重要参数。</p>
+<ul>
+<li>CPU周期又称为机器周期，由多个时钟周期组成！</li>
+<li>指令周期&gt;CPU周期&gt;时钟周期</li>
+</ul>
+</li>
+<li><p>CPI（Clock cycle Per Instruction），即执行<strong>一条指令所需的时钟周期数</strong>。</p>
+<ol>
+<li>CPU执行时间，指运行一个程序所花费的时间。<br><strong>CPU执行时间</strong> &#x3D; CPU时钟周期数&#x2F;主频 &#x3D; (指令条数xCPI)&#x2F;主频<br>CPU的性能取决于三个要素:<strong>主频、CPI 、指令条数</strong></li>
+</ol>
+</li>
+<li><p>IPS(Instructions Per Second) &#x3D;主频&#x2F;平均CPI，每秒执行多少指令</p>
+<p>MIPS(Million Instructions Per Second)&#x3D;即每秒执行多少百万条指令。<br>MFLOPS(Mega Floating-point Operations Per Second)&#x3D;浮点操作次数&#x2F;(执行时间x106),即每秒执行多少百万次浮点运算。<br>GFLOPS(Giga Floating-point Operations Per Second)&#x3D;浮点操作次数&#x2F;(执行时间x109)，即每秒执行多少十亿次浮点运算。</p>
+<p>TFLOPS(Tera Floating-point Operations Per Second)&#x3D;浮点操作次数&#x2F;(执行时间x1012)，即每秒执行多少万亿次浮点运算。</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>同一个功能既可以由软件实现又可以由硬件实现吗？</p>
+<pre><code>软件和硬件是两种完全不同的形态，硬件是实体，是物质基础；软件是一种信息，看不见、摸不到。但在逻辑功能上，软件和硬件是等效的。因此，在计算机系统中，许多功能既可以由硬件直接实现，又可以在硬件的配合下由软件实现。
+一个最大的区别就是，硬件实现比软件实现的速度快很多，但是成本也高！所以，芯片在流片之后，如果发现bug可以用软件修复就用软件修复！
+</code></pre>
+<h4 id="机器字长、指令字长、存储字长的区别和联系是什么？"><a href="#机器字长、指令字长、存储字长的区别和联系是什么？" class="headerlink" title="机器字长、指令字长、存储字长的区别和联系是什么？"></a>机器字长、指令字长、存储字长的区别和联系是什么？</h4><ul>
+<li><p>4.机器字长、指令字长、存储字长的区别和联系是什么？</p>
+</li>
+<li><p><strong>机器字长</strong>：计算机能直接处理的二进制数据的位数，机器字长<strong>一般等于内部寄存器的大小</strong>，它决定了<strong>计算机的运算精度</strong>。<br>指令字长：一个指令字中包含的二进制代码的位数。<br>存储字长：一个存储单元存储的二进制代码的长度。等于MDR的位数， 它们都必须是字节的整数倍。<br>数据字长：数据总线一次能传送信息的位数，它可以不等于MDR的位数。</p>
+<p>指令字长一般取存储字长的整数倍，若指令字长等于存储字长的2倍，则需要2次访存来取出一条指令，因此取指周期为机器周期的2倍；若指令字长等于存储字长，则取指周期等于机器周期。</p>
+<p>早期的计算机存储字长一般和<strong>机器的指令字长与数据字长</strong>相等，因此访问一次主存便可取出一条指令或一个数据。随着计算机的发展，指令字长可变，数据字长也可变，但它们必须都是字节的整数倍。</p>
+<p>请注意64位操作系统是指特别为64位架构的计算机而设计的操作系统，它能够利用64位处理器的优势。但64位机器既可以使用64位操作系统，又可以使用32位操作系统。而32位处理器是无法使用64位操作系统的。</p>
+</li>
+</ul>
+<h1 id="总线"><a href="#总线" class="headerlink" title="总线"></a>总线</h1><h3 id="总线概述"><a href="#总线概述" class="headerlink" title="总线概述"></a>总线概述</h3><h4 id="总线：概念与分类"><a href="#总线：概念与分类" class="headerlink" title="总线：概念与分类"></a>总线：概念与分类</h4><ol>
+<li>什么是总线<ol>
+<li>定义：构成计算机系统的互联机构，是多个<strong>系统功能部件之间进行数据传送</strong>的公共通路</li>
+<li>功能：计算机在各系统功能部件之间实现<strong>地址、数据和控制信息的交换</strong></li>
+<li>特征：在争用资源的基础上进行工作</li>
+</ol>
+</li>
+<li>特点<ol>
+<li>分时：同一时刻只允许有一个部件向总线发送信息，如有多个部件，则分时地向总线发送信息。</li>
+<li>共享：总线上可以挂接多个部件，各个部件之间互相交换的信息都可通过这组线路分时共享，<strong>某一时刻只允许一个部件向总线发送信息</strong>，但<strong>多个部件可以同时从总线上接收相同信息</strong></li>
+<li>总线设备<ol>
+<li>主设备：获得<strong>总线控制权</strong>的设备 </li>
+<li>从设备：被主设备访问的设备，只能响应从主设备发来的各种总线命令</li>
+</ol>
+</li>
+<li>总线的分类<ol>
+<li><strong>片内总线</strong>：CPU芯片内部的总线，在<strong>芯片内部寄存器与寄存器之间、寄存器与ALU之间的公共连接线</strong>。</li>
+<li><strong>系统总线</strong>：<strong>计算机系统内各功能部件</strong>（CPU、主存、IO接口）之间相互连接的总线 按系统总线传输信息内容分为3类<ol>
+<li>数据总线：双向，与机器字长、存储字长有关</li>
+<li>地址总线：单向，与存储地址、I&#x2F;O地址有关</li>
+<li>控制总线：每根线都是单向的，有出、有入</li>
+</ol>
+</li>
+<li><strong>通信总线</strong>：用于<strong>计算机系统之间，或计算机系统与其他系统之间的通信</strong><ol>
+<li>按时序控制方式，分为<strong>同步总线和异步总线</strong></li>
+<li>按数据传输方式，分为<strong>并行总线和串行总线</strong></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h4 id="总线：组成与特性"><a href="#总线：组成与特性" class="headerlink" title="总线：组成与特性"></a>总线：组成与特性</h4><ol>
+<li><p>总线的内部结构：地址线、数据线、控制线组成，数据线常常和地址线采用分时复用方式</p>
+<ol>
+<li>仲裁总线：包括总线请求线和总线授权线。</li>
+<li>中断和同步总线：用于处理带优先级的中断操作。</li>
+<li>公用线：时钟信号线，电源线，地线，系统复位线。</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411241349599.png" alt="image-20241124134917407"></p>
+</li>
+<li><p>总线特性</p>
+<ol>
+<li>物理特性：总线的物理连接方式</li>
+<li>功能特性：每根线的功能</li>
+<li>电气特性：每根线上信号的传递方向及有效电平范围 </li>
+<li>时间特性：规定了每根总线在什么时间有效</li>
+</ol>
+</li>
+</ol>
+<h4 id="总线性能指标"><a href="#总线性能指标" class="headerlink" title="总线性能指标"></a>总线性能指标</h4><ol>
+<li>总线的传输周期：指一次总线操作所需的时间（申请阶段、寻址阶段、传输阶段、结束阶段）总线传输周期通常由<strong>若干个总线时钟周期</strong>构成</li>
+<li>总线时钟周期：机器的时钟周期</li>
+<li><strong>总线的工作频率</strong>：总线周期&#x3D;N 个时钟周期，则总线的工作频率&#x3D;时钟频率&#x2F; N。</li>
+<li>总线的时钟频率：机器的时钟频率</li>
+<li><strong>总线宽度</strong>：又称为总线位宽，是指总线上同时能够传输的数据位数，通常是指数据总线的根数</li>
+<li><strong>总线带宽</strong>：单位时间内总线上传输的最大字节数（MB&#x2F;s）。计算公式：总线带宽 &#x3D; 总线宽度 * 总线频率</li>
+<li>总线复用：指一种信号线在不同时间传输不同的信息，可以使用较少的线传输更多的信息</li>
+<li>信号线数：地址线、数据线和控制线的总和</li>
+</ol>
+<h4 id="总线的传输方式"><a href="#总线的传输方式" class="headerlink" title="总线的传输方式"></a>总线的传输方式</h4><ol>
+<li><p>串行传送：使用一条传输线，采用脉冲传送</p>
+<ol>
+<li>主要优点：<ul>
+<li>只需要一条传输线</li>
+<li>对长距离传输特别重要</li>
+<li>成本比较低廉</li>
+</ul>
+</li>
+<li>缺点：速度慢</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411241405955.png" alt="image-20241124140543760"></p>
+</li>
+<li><p>并行传送</p>
+<ol>
+<li>特点：同时传送多个数据位</li>
+<li>系统总线上传送的信息必须采用并行传送方式（出于速度和效率上的考虑）</li>
+</ol>
+</li>
+<li><p>分时传送：分时传送即总线的分时复用，共享总线的部件分时使用总线</p>
+</li>
+</ol>
+<h4 id="总线接口"><a href="#总线接口" class="headerlink" title="总线接口"></a>总线接口</h4><p>接口是CPU和主存、外设之间通过总线进行连接的逻辑部件</p>
+<p>接口的典型功能：<strong>控制、缓冲、转换、整理、程序中断</strong>等。</p>
+<p>一个适配器（即接口）的两个接口：一个同系统总线相连，采用并行方式，另外</p>
+<p>一个同设备相连，可能采用并行方式或是串行方式。</p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411241408550.png" alt="image-20241124140808869"></p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411241409654.png" alt="image-20241124140954175"></p>
+<h4 id="总线结构"><a href="#总线结构" class="headerlink" title="总线结构"></a>总线结构</h4><ol>
+<li><p>单总线结构</p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411241411187.png" alt="image-20241124141137769"></p>
+<ol>
+<li><p>CPU、主存、I&#x2F;O设备（通过I&#x2F;O接口）都挂在一组总线上</p>
+<p>2.运行I&#x2F;O设备之间、I&#x2F;O设备与主存之间直接交换信息</p>
+</li>
+<li><p>直接通信能力：CPU与主存可直接进行信息交换，CPU与外设可直接进行信息交换，无需经过中间设备的干预。</p>
+</li>
+<li><p>优点：结构简单，成本低，易于接入新的设备</p>
+</li>
+<li><p>缺点：带宽低，负载重，多个部件只能争用唯一的总线，不支持并发传送操作</p>
+</li>
+<li><p>使用要求：连接到总线上的逻辑部件必须高速运行，需要使用总线时，能迅速获得总线控制权；而当不再使用总线时，能迅速放弃总线控制权。否则，由于一条总线由多种功能部件共用，可能导致很大的时间延迟。</p>
+</li>
+</ol>
+</li>
+</ol>
+<h1 id="数据的表示与运算"><a href="#数据的表示与运算" class="headerlink" title="数据的表示与运算"></a>数据的表示与运算</h1><p><img src="https://i-blog.csdnimg.cn/blog_migrate/fbfd556035d1515cb69fb9497f34cbe6.png" alt="在这里插入图片描述"></p>
+<h2 id="2-1-数制与编码"><a href="#2-1-数制与编码" class="headerlink" title="2.1 数制与编码"></a>2.1 数制与编码</h2><h3 id="2-1-1-进位计数制及其相互转化"><a href="#2-1-1-进位计数制及其相互转化" class="headerlink" title="2.1.1 进位计数制及其相互转化"></a>2.1.1 进位计数制及其相互转化</h3><p><img src="https://i-blog.csdnimg.cn/blog_migrate/5586a24cc9076b70895dc628ea9be86a.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/61ec3b0ee1a4f9fc13d97168eab59bcd.png" alt="在这里插入图片描述"></p>
+<h4 id="2-1-2-BCD码（Binary-Code-Decimal码）"><a href="#2-1-2-BCD码（Binary-Code-Decimal码）" class="headerlink" title="2.1.2 BCD码（Binary-Code Decimal码）"></a>2.1.2 BCD码（Binary-Code Decimal码）</h4><p>每一个十进制数看成4位2进制数</p>
+<p>8421 每一位代表权重</p>
+<p>5421</p>
+<p>2421</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/0e45a2f6305f8d3f8e66d0aa3a77d2d9.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/e29dab138174435e7cee71aca4e0a668.png" alt="在这里插入图片描述"></p>
+<h5 id="字符编码ASCII码"><a href="#字符编码ASCII码" class="headerlink" title="字符编码ASCII码"></a>字符编码ASCII码</h5><p><img src="https://i-blog.csdnimg.cn/blog_migrate/49b74cc4a0c0cfd36da3c125f6dcc9ac.png" alt="在这里插入图片描述"></p>
+<h3 id="2-1-5-校验码"><a href="#2-1-5-校验码" class="headerlink" title="2.1.5 校验码"></a>2.1.5 校验码</h3><p>任意两个码字之间最少变化的二进制位数称为<strong>码距</strong>，码距大于等于2的数据校验码开始具有检错的能力。码距越大，检错、纠错能力越强。奇偶校验码的码距等于2,可以检测出一位错误（或奇数位错误），但不能确定出错的位置，也不能检测出偶数位错误；海明码的码距大于2,因此不仅可以发现错误，还能指出错误的位置。仅靠增加奇偶校验位的位数不能提高正确性，还要考虑码距。</p>
+<p>具有检、纠错能力的数据校验码的实现原理：在编码中，除合法码字外，再加入一些非法码字，当某个合法码字出现错误时，就变为非法码字。合理安排非法码字的数量和编码规则就能达到纠错的目的。</p>
+<h5 id="奇偶校验码"><a href="#奇偶校验码" class="headerlink" title="奇偶校验码"></a>奇偶校验码</h5><p>奇校验码 加上校验位 1的个数为奇数个</p>
+<p>偶校验码加上校验位 1的个数为偶数个</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/a970ee36dbd145e24b24ae7465936371.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/ecdbffc1c4bc3b60fe4c6f4aa8d2e7d2.png" alt="在这里插入图片描述"></p>
+<h3 id="2-海明（汉明）校验码"><a href="#2-海明（汉明）校验码" class="headerlink" title="2.海明（汉明）校验码"></a>2.海明（汉明）校验码</h3><p><img src="https://i-blog.csdnimg.cn/blog_migrate/ef82d56a4c9123c1ac62b4960087b3d7.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/c261e94fd65b5e3f3a031df84dca8759.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/23f22c043b055368a835173b17bab7c2.png" alt="在这里插入图片描述"></p>
+<p>​	<img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221040495.png" alt="image-20241122104000839"></p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221040873.png" alt="image-20241122104048405"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/bbf970905e8ede6037ca72b5f87057f6.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/dd84a82040f97c80c743bc10bbbb46c0.png" alt="在这里插入图片描述"></p>
+<h3 id="3-循环冗余校验（CRC）码"><a href="#3-循环冗余校验（CRC）码" class="headerlink" title="3. 循环冗余校验（CRC）码"></a>3. 循环冗余校验（CRC）码</h3><p><img src="https://i-blog.csdnimg.cn/blog_migrate/249fbfb07d9f25b2bc8e40b54a57f41b.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/34535ed57e695cee662b0f6b33f8443f.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/e79227259e72d22c83804c3b8f836e6e.png" alt="在这里插入图片描述"></p>
+<p>这里可以进行异或运算</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/1d91dfb26bed6bbac415fbb90f0ed223.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/ede6ae9725ae977d507bee0a6bfc6763.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/3e9b7a972b8da33d2fcfa1b66226eaf1.png" alt="在这里插入图片描述"></p>
+<h3 id="定点数"><a href="#定点数" class="headerlink" title="定点数"></a>定点数</h3><p>1.无符号数和有符号数<br>计算机中参与运算的有两大类，<strong>有符号数和无符号数</strong><br>无符号数：机器字长全部二进制位均为数值位，没有符号位。<img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221138060.png" alt="image-20241122113841651"></p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221139350.png" alt="image-20241122113904133"></p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221141885.png" alt="image-20241122114151170">有符号数：</p>
+<p>机器数：保存在计算机当中（原码表示法）</p>
+<p>真值：带有正负号 0正1负 </p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221250451.png" alt="image-20241122124949269"></p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221254592.png" alt="image-20241122125419570"><br>$$<br>2^4 &#x3D; 10000<br>$$</p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221406362.png" alt="image-20241122140626126"></p>
+<p>补码：解决加减法归一化问题把减法转换成加法</p>
+<p>正数：原码&#x3D;反码&#x3D;补码</p>
+<p>负数  反码&#x3D;原码符号为不变，其余位取反，补码 &#x3D; 反码+1</p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221419814.png" alt="image-20241122141924369"></p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221424665.png" alt="image-20241122142432006"></p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221435983.png" alt="image-20241122143524432"></p>
+<h5 id="移码"><a href="#移码" class="headerlink" title="移码"></a>移码</h5><p>补码表示很难直接判断其真值大小</p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221439906.png" alt="image-20241122143942325"></p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221442870.png" alt="image-20241122144209847"></p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221444032.png" alt="image-20241122144427209"></p>
+<h3 id="数的定点表示和浮点表示"><a href="#数的定点表示和浮点表示" class="headerlink" title="数的定点表示和浮点表示"></a>数的定点表示和浮点表示</h3><h4 id="定点表示"><a href="#定点表示" class="headerlink" title="定点表示"></a>定点表示</h4><p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221449852.png" alt="image-20241122144925594"></p>
+<h4 id="浮点表示"><a href="#浮点表示" class="headerlink" title="浮点表示"></a>浮点表示</h4><ul>
+<li>为什么要引入浮点数表示<ul>
+<li>编程困难，程序员要调节小数点的位置；</li>
+<li>数的表示范围小，为了能表示两个大小相差很大的数据，需要很长的机器字长；</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221451336.png" alt="image-20241122145130956"></p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221453337.png" alt="image-20241122145327344"></p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221456126.png" alt="image-20241122145629928"></p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221459156.png" alt="image-20241122145914061"></p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221506255.png" alt="image-20241122150611964"></p>
+<h3 id="定点运算"><a href="#定点运算" class="headerlink" title="定点运算"></a>定点运算</h3><p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221510086.png" alt="image-20241122151003646"></p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221511254.png" alt="image-20241122151151182"></p>
+<h3 id="算法移位"><a href="#算法移位" class="headerlink" title="算法移位"></a>算法移位</h3><p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221522353.png" alt="image-20241122152228956"></p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221523789.png" alt="image-20241122152306490"></p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221524389.png" alt="image-20241122152435292"></p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221525063.png" alt="image-20241122152524774"></p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411221526890.png" alt="image-20241122152605732"></p>
+<p>溢出判断</p>
+<p><img src="/../images/image-20241122152748295.png" alt="image-20241122152748295"></p>
+<h3 id="乘法"><a href="#乘法" class="headerlink" title="乘法"></a>乘法</h3><h4 id="在计算机中，为什么要采用二进制来表示数据？"><a href="#在计算机中，为什么要采用二进制来表示数据？" class="headerlink" title="在计算机中，为什么要采用二进制来表示数据？"></a>在计算机中，为什么要采用二进制来表示数据？</h4><ul>
+<li><p>1)在计算机中，为什么要采用二进制来表示数据？</p>
+<p>从可行性来说，采用二进制，只有0和1两个状态，能够表示0、1两种状态的电子器件很多，如开关的接通和断开、晶体管的导通和截止、磁元件的正负剩磁、电位电平的高与低等，都可表示0、1两个数码。使用二进制，电子器件具有实现的可行性。<br>从运算的简易性来说，二进制数的运算法则少，运算简单，使计算机运算器的硬件结构大大简化(十进制的乘法九九口诀表有55条公式，而二进制乘法只有4条规则)从逻辑上来说，由于二进制0和1正好和逻辑代数的假( false)和真(true)相对应，有逻辑代数的理论基础，用二进制表示二值逻辑很自然。</p>
+</li>
+</ul>
+<h4 id="2-计算机在字长足够的情况下能够精确地表示每个数吗？若不能，请举例说明。"><a href="#2-计算机在字长足够的情况下能够精确地表示每个数吗？若不能，请举例说明。" class="headerlink" title="2)计算机在字长足够的情况下能够精确地表示每个数吗？若不能，请举例说明。"></a>2)计算机在字长足够的情况下能够精确地表示每个数吗？若不能，请举例说明。</h4><ul>
+<li><p>2)计算机在字长足够的情况下能够精确地表示每个数吗？若不能，请举例说明。</p>
+<p>计算机采用二进制来表示数据，在字长足够时，可以表示任何一个整数。而二进制表示小数时只能够用1(2)的和的任意组合表示，即使字长很长，也不可能精确表示出所有小数，只能无限逼近。例如0.1就无法用二进制精确地表示。</p>
+</li>
+</ul>
+<h4 id="3-字长相同的情况下，浮点数和定点数的表示范围与精度有什么区别？"><a href="#3-字长相同的情况下，浮点数和定点数的表示范围与精度有什么区别？" class="headerlink" title="3)字长相同的情况下，浮点数和定点数的表示范围与精度有什么区别？"></a>3)字长相同的情况下，浮点数和定点数的表示范围与精度有什么区别？</h4><ul>
+<li><p>3)字长相同的情况下，浮点数和定点数的表示范围与精度有什么区别？</p>
+<p>字长相同时，浮点数取字长的一部分作为阶码，所以表示范围比定点数要大，而取一部分作为阶码也就代表着尾数部位的有效位数减少，而定点数字长的全部位都用来表示数值本身，精度要比同字长的浮点数更大。</p>
+</li>
+</ul>
+<h4 id="4-用移码表示浮点数的阶码有什么好处？"><a href="#4-用移码表示浮点数的阶码有什么好处？" class="headerlink" title="4)用移码表示浮点数的阶码有什么好处？"></a>4)用移码表示浮点数的阶码有什么好处？</h4><ul>
+<li><p>4)用移码表示浮点数的阶码有什么好处？</p>
+<p>移码的两个好处<br>①浮点数进行加减运算时，时常要比较阶码的大小，相对于原码和补码，移码比较大小更方便。<br>②检验移码的特殊值(0和max)时比较容易。阶码以移码编码时的特殊值如下。<strong>0</strong>:表示指数为负无穷大，相当于分数分母无穷大，整个数无穷接近0,在尾数也为0时可用来表示0:尾数不为零表示未正规化的数。<strong>max</strong>:表示指数正无穷大，若尾数为0,则表示浮点数超出表示范围（正负无穷大）；尾数不为0,则表示浮点数运算错误</p>
+</li>
+</ul>
+<h4 id="在高级语言编程中所定义的-unsigned-short-int-long-float-double型数据是怎么表示的？什么称为无符号整数的“溢出”？"><a href="#在高级语言编程中所定义的-unsigned-short-int-long-float-double型数据是怎么表示的？什么称为无符号整数的“溢出”？" class="headerlink" title=".在高级语言编程中所定义的 unsigned&#x2F;short&#x2F;int&#x2F;long&#x2F;float&#x2F;double型数据是怎么表示的？什么称为无符号整数的“溢出”？"></a>.在高级语言编程中所定义的 unsigned&#x2F;short&#x2F;int&#x2F;long&#x2F;float&#x2F;double型数据是怎么表示的？什么称为无符号整数的“溢出”？</h4><ul>
+<li><p>2.在高级语言编程中所定义的 unsigned&#x2F;short&#x2F;int&#x2F;long&#x2F;float&#x2F;double型数据是怎么表示的？什么称为无符号整数的“溢出”？</p>
+<p>unsigned型数据就是无符号整数，不考虑符号位。直接用全部二进制位对数值进行编码得到的就是无符号数，一般都用补码表示。</p>
+<p>int型数据就是定点整数，一般用补码表示。int型数据的位数与运行平台和编译器有关，一般是32位或16位。例如，真值是-12的int型整数，在机器内存储的机器数（假定用32位寄存器寄存）是1111-1111-1111-1111-1111-1111-1111-0100.</p>
+<p>long型数据和short型数据也都是定点整数，只是位数不同，分别是长整型和短整型数，通常用补码表示。</p>
+<p>float型数据是用来表示实数的浮点数。现代计算机用IEEE754标准表示浮点数，其中32位单精度浮点数就是float型，64位双精度浮点数就是 double型。</p>
+<p>需要注意的是，C语言中的int型和 unsigned型变量的存储方式没有区别，都按照补码的形式存储，在不溢出范围内的加减法运算也是相同的，只是int型变量的最高位代表符号位，而unsigned型中的最高位表示数值位，两者在C语言中的区别体现在输出时到底是采用%d还是采用%u。</p>
+<p>对于无符号定点整数来说，若寄存器位数不够，则计算机运算过程中一般保留低n位，舍弃高位。这样，会产生以下两种结果。<br>①保留的低n位数不能正确表示运算结果。在这种情况下，意味着运算的结果超出了计算机所能表达的范围，有效数值进到了第n+1位，称此时发生了“溢出”现象<br>②保留的低n位数能正确表达计算结果，即高位的舍去并不影响其运算结果。</p>
+</li>
+</ul>
+<h4 id="对于位数相同的定点数和浮点数，可表示的浮点数个数比定点数个数多吗？"><a href="#对于位数相同的定点数和浮点数，可表示的浮点数个数比定点数个数多吗？" class="headerlink" title="对于位数相同的定点数和浮点数，可表示的浮点数个数比定点数个数多吗？"></a>对于位数相同的定点数和浮点数，可表示的浮点数个数比定点数个数多吗？</h4><ul>
+<li><p>4.对于位数相同的定点数和浮点数，可表示的浮点数个数比定点数个数多吗？</p>
+<p>不是，可表示的数据个数取决于编码所采用的位数。编码位数一定，编码出来的数据个数就是一定的。m位编码只能表示2m个数，所以对于相同位数的定点数和浮点数来说，可表示的数据个数应该一样多(有时可能由于一个值有两个或多个编码对应，编码个数会有少量差异)。</p>
+</li>
+</ul>
+<h1 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h1><p><img src="https://i-blog.csdnimg.cn/blog_migrate/66b98e81fc90bfc3506c9467633e2ee8.png" alt="在这里插入图片描述"></p>
+<h2 id="3-1-存储器概述"><a href="#3-1-存储器概述" class="headerlink" title="3.1 存储器概述"></a>3.1 存储器概述</h2><h4 id="3-1-1-存储器的分类"><a href="#3-1-1-存储器的分类" class="headerlink" title="3.1.1 存储器的分类"></a>3.1.1 存储器的分类</h4><p>相联存储器的基本原理是把存储单元所存内容的某一部分作为检索项（即关键字项）去检索该存储器，并将存储器中与该检索项符合的存储单元内容进行读出或写入。所以它是 按内容或地址进行寻址的，价格较为昂贵。 一般用<strong>来制作TLB、相联 Cache</strong>等。</p>
+<p>按在计算机中的作用对存储器分类：</p>
+<ul>
+<li>主存储器,简称主存。CPU可以直接随机地对其进行访问，也可以和高速缓存器及辅助存储器交换数据。</li>
+<li>辅助存储器,简称辅存，不能与CPU直接相连，用来存放当前暂时不用的程序和数据</li>
+<li>高速缓冲存储器,位于主存和CPU之间，用来存放正在执行的程序段和数据</li>
+</ul>
+<p>按存储介质分类：</p>
+<ul>
+<li>磁表面存储器（磁盘，磁带），磁心存储器半导体存储器（MOS型存储器，双极存储器）和光存储器（光盘）。</li>
+</ul>
+<p>按存取方式分类：</p>
+<ul>
+<li>随机存储器（RAM）。存储器的任何一个存储单元的内容都可以随机存取，而且存取时间与存取单元的物理位置无关，主要用作主存或高速缓冲存储器。</li>
+<li>只读存储器（ROM）。存储器的内容只能随机读出而不能写入。。即使断电，内容也不会丢失。</li>
+<li>串行访问存储器。对存储单元进行读&#x2F;写操作时，需按其物理位置的先后顺序寻址，包括顺序存取存储器（如<strong>磁带</strong>）与直接存取存储器（如<strong>磁盘</strong>）。</li>
+</ul>
+<p>按信息的可保存性分类：</p>
+<p>断电后，存储信息即消失的存储器，称为<strong>易失性存储</strong>器，如RAM。断电后信息仍然保持的存储器，称为<strong>非易失性存储器</strong>，如ROM，磁表面存储器和光存储器。<strong>若某个存储单元所存储的信息被读出时，原存储信息被破坏，则称为破坏性读出；若读出时，被读单元原存储信息不被破坏，则称为非破坏性读出。</strong>具有破坏性读出性能的存储器，每次读出操作后，必须紧接一个再生的操作，以便恢复被破坏的信息。</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/0ad326410974404693b1611fa29a8899.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/b69d4cba3caa693102dcbd1ceaa46b2b.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/f543b20ba92e2b0f7b36027241668f37.png" alt="在这里插入图片描述"></p>
+<h4 id="3-1-2-存储器的性能指标"><a href="#3-1-2-存储器的性能指标" class="headerlink" title="3.1.2 存储器的性能指标"></a>3.1.2 存储器的性能指标</h4><ol>
+<li>存储容量：存储字数*字长</li>
+<li>单位成本：每位价格&#x3D;总成本&#x2F;总容量</li>
+<li>存储速度：数据传输率&#x3D;数据的宽度&#x2F;存储周期</li>
+</ol>
+<h3 id="3-2-存储器的层次结构"><a href="#3-2-存储器的层次结构" class="headerlink" title="3.2 存储器的层次结构"></a>3.2 存储器的层次结构</h3><p><img src="https://i-blog.csdnimg.cn/blog_migrate/d679ff8ea252bd55dc150e7192e63007.png" alt="在这里插入图片描述"></p>
+<h3 id="主存储器"><a href="#主存储器" class="headerlink" title="主存储器"></a>主存储器</h3><p><img src="https://i-blog.csdnimg.cn/blog_migrate/c0da5ba7f02869ddb4946d76a475bbd1.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/ba662c9ed01b6ed33ccaafaf9cceb1af.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/01a402cd59466ba8d78a84dc85e7b3c9.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/75311fdb93ed457c1a4d815dedc0d0a7.png" alt="在这里插入图片描述"></p>
+<h3 id="3-3-半导体随机存储器"><a href="#3-3-半导体随机存储器" class="headerlink" title="3.3 半导体随机存储器"></a>3.3 半导体随机存储器</h3><h4 id="3-3-1-SRAM和DRAM"><a href="#3-3-1-SRAM和DRAM" class="headerlink" title="3.3.1 SRAM和DRAM"></a>3.3.1 SRAM和DRAM</h4><p><img src="https://i-blog.csdnimg.cn/blog_migrate/e5460ab4f1bfd43e2553d29986523916.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/bafd8beffd2da2f327ae25594d8bce54.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/0952215dccce3a125a3d23f46d66ba12.png" alt="在这里插入图片描述"></p>
+<p>译码码驱动：线选法，重合法</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/a94e96d6fbd602f22ce5009b593b4159.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/8196643f948aba6fbcb84d2096abd038.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/b80ae8ca6e1989312e1b56d9babc9574.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/67d9a67b5fb662c9539d9d98b61c46ee.png" alt="在这里插入图片描述"></p>
+<h4 id="3-3-2-只读存储器"><a href="#3-3-2-只读存储器" class="headerlink" title="3.3.2 只读存储器"></a>3.3.2 只读存储器</h4><p><img src="https://i-blog.csdnimg.cn/blog_migrate/64d34d40cce418724674050e12f718f1.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/b441dc3a74080edd97b6c3d929ecdc64.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/b441dc3a74080edd97b6c3d929ecdc64.png" alt="在这里插入图片描述"></p>
+<h3 id="3-4-主存储器与CPU的连接"><a href="#3-4-主存储器与CPU的连接" class="headerlink" title="3.4 主存储器与CPU的连接"></a>3.4 主存储器与CPU的连接</h3><h4 id="3-4-2-主存容量的扩展"><a href="#3-4-2-主存容量的扩展" class="headerlink" title="3.4.2 主存容量的扩展"></a>3.4.2 主存容量的扩展</h4><p><img src="https://i-blog.csdnimg.cn/blog_migrate/27cc715d7f1edaef7eefe834728a9f91.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/fe0e728489330c379894f4c1846d7818.png" alt="在这里插入图片描述"></p>
+<h5 id="2-字扩展"><a href="#2-字扩展" class="headerlink" title="2.字扩展"></a>2.字扩展</h5><p><img src="https://i-blog.csdnimg.cn/blog_migrate/7ff121420aaeef4bb67dd9faa3e88c43.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/6c6c2896bdadcb8b76a967953713f894.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/84817bb7cbb74e127e7658b66fc7ef8b.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/e1cf638a2a58f440c4c8916bddd317c8.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/3d5e06ae818437e8c5d219eb22d63846.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/6303cfeb16aee98b1f0356c9ba859846.png" alt="在这里插入图片描述"></p>
+<h3 id="3-5-双端口RAM和多模块存储器"><a href="#3-5-双端口RAM和多模块存储器" class="headerlink" title="3.5 双端口RAM和多模块存储器"></a>3.5 双端口RAM和多模块存储器</h3><p><img src="https://i-blog.csdnimg.cn/blog_migrate/7ca200997a2c7b8316e60fa50e2348b5.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/4b2bdf4b79975daefb6e0d3cf924a74e.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/692ea89e2fb1b8835b8814fd58d1bf86.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/5a4841cc3dfbb384cb7837adea1b56c6.png" alt="在这里插入图片描述"></p>
+<h4 id="3-6-1-程序访问的局部性原理"><a href="#3-6-1-程序访问的局部性原理" class="headerlink" title="3.6.1 程序访问的局部性原理"></a>3.6.1 程序访问的局部性原理</h4><p><img src="https://i-blog.csdnimg.cn/blog_migrate/e832742d19e68be59b1e8cd21538c604.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/b0118ba3bf0e00d9127d520f3bb7b4a7.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/f6b83fb5fb8220f48d3285d78b8d5956.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/f04787838a813b4eb48d401c242240cd.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/f043f952cca03789fb4384d347038a03.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/806fcd43467a1e23af7492d6828b5a52.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/f5bb151f88c68bf3e3f1615881ae6efa.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/a5cd63d9f8053955cfa333d16b63f5d7.png" alt="在这里插入图片描述"></p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/b9eda1e34499c1a9a237fceae2f00365.png" alt="在这里插入图片描述"></p>
+<p>SCI总线—-SCI（serial communication interface）由Motorola公司推出。是一种通用异步通信接口UART，与MCS-51的异步通信功能基本相同。</p>
+<p> PCI总线—-PCI（peripheral component interconnect）<strong>总线是当前最流行的总线之一，</strong>它是由Intel公司推出的一种局部总线。它定义了32位数据总线，且可扩展为64位。是基于奔腾等新一代微处理器而发展的总线。</p>
+<p> ISA总线—-ISA（industrial standard architecture）<strong>总线标准是IBM 公司1984年为推出PC&#x2F;AT机而建立的系统总线标准</strong>，所以也叫AT总线。它是对XT总线的扩展，以适应8&#x2F;16位数据总线要求。它在80286至80486时代应用非常广泛，以至于奔腾机中还保留有ISA总线插槽。ISA总线有98只引脚。 </p>
+<p>VESA总线—-VESA（video electronics standard association）<strong>总线是 1992年由60家附件卡制造商联合推出的一种局部总线，简称为VL(VESA local bus)总线</strong>。它的推出为微机系统总线体系结构的革新奠定了基础。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://a186232641.github.io">FeiLong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://a186232641.github.io/2024/11/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">https://a186232641.github.io/2024/11/22/计算机组成原理/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://a186232641.github.io" target="_blank">不会码字的程序猿</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/11/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">数据结构</div></div></a></div><div class="next-post pull-right"><a href="/2024/11/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="操作系统"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">操作系统</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">FeiLong</div><div class="author-info__description">这是我的博客网站</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/a186232641"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/a186232641" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:a186232641@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">计算机系统概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.1 计算机发展历程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%9A%84%E5%8F%91%E5%B1%95"><span class="toc-number">1.0.2.</span> <span class="toc-text">1.1.1 计算机硬件的发展</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">1.2 计算机系统层次结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90"><span class="toc-number">1.1.1.</span> <span class="toc-text">计算机硬件的基本组成</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%8E%B0%E4%BB%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.1.0.1.</span> <span class="toc-text">现代计算机的组织结构</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-3-%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">1.2.3 计算机软件的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6%E5%92%8C%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.1.1.1.1.</span> <span class="toc-text">系统软件和应用软件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%89%E4%B8%AA%E7%BA%A7%E5%88%AB%E7%9A%84%E8%AF%AD%E8%A8%80"><span class="toc-number">1.1.1.1.2.</span> <span class="toc-text">三个级别的语言</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="toc-number">1.1.2.</span> <span class="toc-text">计算机的工作过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">1.1.3.</span> <span class="toc-text">计算机性能指标</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%97%E9%95%BF%E3%80%81%E6%8C%87%E4%BB%A4%E5%AD%97%E9%95%BF%E3%80%81%E5%AD%98%E5%82%A8%E5%AD%97%E9%95%BF%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E8%81%94%E7%B3%BB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">机器字长、指令字长、存储字长的区别和联系是什么？</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF"><span class="toc-number">2.</span> <span class="toc-text">总线</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF%E6%A6%82%E8%BF%B0"><span class="toc-number">2.0.1.</span> <span class="toc-text">总线概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF%EF%BC%9A%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%88%86%E7%B1%BB"><span class="toc-number">2.0.1.1.</span> <span class="toc-text">总线：概念与分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF%EF%BC%9A%E7%BB%84%E6%88%90%E4%B8%8E%E7%89%B9%E6%80%A7"><span class="toc-number">2.0.1.2.</span> <span class="toc-text">总线：组成与特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">2.0.1.3.</span> <span class="toc-text">总线性能指标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF%E7%9A%84%E4%BC%A0%E8%BE%93%E6%96%B9%E5%BC%8F"><span class="toc-number">2.0.1.4.</span> <span class="toc-text">总线的传输方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF%E6%8E%A5%E5%8F%A3"><span class="toc-number">2.0.1.5.</span> <span class="toc-text">总线接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%84"><span class="toc-number">2.0.1.6.</span> <span class="toc-text">总线结构</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97"><span class="toc-number">3.</span> <span class="toc-text">数据的表示与运算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E6%95%B0%E5%88%B6%E4%B8%8E%E7%BC%96%E7%A0%81"><span class="toc-number">3.1.</span> <span class="toc-text">2.1 数制与编码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-%E8%BF%9B%E4%BD%8D%E8%AE%A1%E6%95%B0%E5%88%B6%E5%8F%8A%E5%85%B6%E7%9B%B8%E4%BA%92%E8%BD%AC%E5%8C%96"><span class="toc-number">3.1.1.</span> <span class="toc-text">2.1.1 进位计数制及其相互转化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-2-BCD%E7%A0%81%EF%BC%88Binary-Code-Decimal%E7%A0%81%EF%BC%89"><span class="toc-number">3.1.1.1.</span> <span class="toc-text">2.1.2 BCD码（Binary-Code Decimal码）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81ASCII%E7%A0%81"><span class="toc-number">3.1.1.1.1.</span> <span class="toc-text">字符编码ASCII码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-5-%E6%A0%A1%E9%AA%8C%E7%A0%81"><span class="toc-number">3.1.2.</span> <span class="toc-text">2.1.5 校验码</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A5%87%E5%81%B6%E6%A0%A1%E9%AA%8C%E7%A0%81"><span class="toc-number">3.1.2.0.1.</span> <span class="toc-text">奇偶校验码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%B5%B7%E6%98%8E%EF%BC%88%E6%B1%89%E6%98%8E%EF%BC%89%E6%A0%A1%E9%AA%8C%E7%A0%81"><span class="toc-number">3.1.3.</span> <span class="toc-text">2.海明（汉明）校验码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%BE%AA%E7%8E%AF%E5%86%97%E4%BD%99%E6%A0%A1%E9%AA%8C%EF%BC%88CRC%EF%BC%89%E7%A0%81"><span class="toc-number">3.1.4.</span> <span class="toc-text">3. 循环冗余校验（CRC）码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E7%82%B9%E6%95%B0"><span class="toc-number">3.1.5.</span> <span class="toc-text">定点数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A7%BB%E7%A0%81"><span class="toc-number">3.1.5.0.1.</span> <span class="toc-text">移码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%9A%84%E5%AE%9A%E7%82%B9%E8%A1%A8%E7%A4%BA%E5%92%8C%E6%B5%AE%E7%82%B9%E8%A1%A8%E7%A4%BA"><span class="toc-number">3.1.6.</span> <span class="toc-text">数的定点表示和浮点表示</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E7%82%B9%E8%A1%A8%E7%A4%BA"><span class="toc-number">3.1.6.1.</span> <span class="toc-text">定点表示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E8%A1%A8%E7%A4%BA"><span class="toc-number">3.1.6.2.</span> <span class="toc-text">浮点表示</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E7%82%B9%E8%BF%90%E7%AE%97"><span class="toc-number">3.1.7.</span> <span class="toc-text">定点运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E7%A7%BB%E4%BD%8D"><span class="toc-number">3.1.8.</span> <span class="toc-text">算法移位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%98%E6%B3%95"><span class="toc-number">3.1.9.</span> <span class="toc-text">乘法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%87%E7%94%A8%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%9D%A5%E8%A1%A8%E7%A4%BA%E6%95%B0%E6%8D%AE%EF%BC%9F"><span class="toc-number">3.1.9.1.</span> <span class="toc-text">在计算机中，为什么要采用二进制来表示数据？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9C%A8%E5%AD%97%E9%95%BF%E8%B6%B3%E5%A4%9F%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E8%83%BD%E5%A4%9F%E7%B2%BE%E7%A1%AE%E5%9C%B0%E8%A1%A8%E7%A4%BA%E6%AF%8F%E4%B8%AA%E6%95%B0%E5%90%97%EF%BC%9F%E8%8B%A5%E4%B8%8D%E8%83%BD%EF%BC%8C%E8%AF%B7%E4%B8%BE%E4%BE%8B%E8%AF%B4%E6%98%8E%E3%80%82"><span class="toc-number">3.1.9.2.</span> <span class="toc-text">2)计算机在字长足够的情况下能够精确地表示每个数吗？若不能，请举例说明。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%AD%97%E9%95%BF%E7%9B%B8%E5%90%8C%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8C%E6%B5%AE%E7%82%B9%E6%95%B0%E5%92%8C%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA%E8%8C%83%E5%9B%B4%E4%B8%8E%E7%B2%BE%E5%BA%A6%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">3.1.9.3.</span> <span class="toc-text">3)字长相同的情况下，浮点数和定点数的表示范围与精度有什么区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E7%94%A8%E7%A7%BB%E7%A0%81%E8%A1%A8%E7%A4%BA%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E9%98%B6%E7%A0%81%E6%9C%89%E4%BB%80%E4%B9%88%E5%A5%BD%E5%A4%84%EF%BC%9F"><span class="toc-number">3.1.9.4.</span> <span class="toc-text">4)用移码表示浮点数的阶码有什么好处？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8%E9%AB%98%E7%BA%A7%E8%AF%AD%E8%A8%80%E7%BC%96%E7%A8%8B%E4%B8%AD%E6%89%80%E5%AE%9A%E4%B9%89%E7%9A%84-unsigned-short-int-long-float-double%E5%9E%8B%E6%95%B0%E6%8D%AE%E6%98%AF%E6%80%8E%E4%B9%88%E8%A1%A8%E7%A4%BA%E7%9A%84%EF%BC%9F%E4%BB%80%E4%B9%88%E7%A7%B0%E4%B8%BA%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B4%E6%95%B0%E7%9A%84%E2%80%9C%E6%BA%A2%E5%87%BA%E2%80%9D%EF%BC%9F"><span class="toc-number">3.1.9.5.</span> <span class="toc-text">.在高级语言编程中所定义的 unsigned&#x2F;short&#x2F;int&#x2F;long&#x2F;float&#x2F;double型数据是怎么表示的？什么称为无符号整数的“溢出”？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E4%BA%8E%E4%BD%8D%E6%95%B0%E7%9B%B8%E5%90%8C%E7%9A%84%E5%AE%9A%E7%82%B9%E6%95%B0%E5%92%8C%E6%B5%AE%E7%82%B9%E6%95%B0%EF%BC%8C%E5%8F%AF%E8%A1%A8%E7%A4%BA%E7%9A%84%E6%B5%AE%E7%82%B9%E6%95%B0%E4%B8%AA%E6%95%B0%E6%AF%94%E5%AE%9A%E7%82%B9%E6%95%B0%E4%B8%AA%E6%95%B0%E5%A4%9A%E5%90%97%EF%BC%9F"><span class="toc-number">3.1.9.6.</span> <span class="toc-text">对于位数相同的定点数和浮点数，可表示的浮点数个数比定点数个数多吗？</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text">存储器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E5%AD%98%E5%82%A8%E5%99%A8%E6%A6%82%E8%BF%B0"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 存储器概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">4.1.0.1.</span> <span class="toc-text">3.1.1 存储器的分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2-%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">4.1.0.2.</span> <span class="toc-text">3.1.2 存储器的性能指标</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="toc-number">4.1.1.</span> <span class="toc-text">3.2 存储器的层次结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">4.1.2.</span> <span class="toc-text">主存储器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%8D%8A%E5%AF%BC%E4%BD%93%E9%9A%8F%E6%9C%BA%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">4.1.3.</span> <span class="toc-text">3.3 半导体随机存储器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1-SRAM%E5%92%8CDRAM"><span class="toc-number">4.1.3.1.</span> <span class="toc-text">3.3.1 SRAM和DRAM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-2-%E5%8F%AA%E8%AF%BB%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">4.1.3.2.</span> <span class="toc-text">3.3.2 只读存储器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8%E4%B8%8ECPU%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="toc-number">4.1.4.</span> <span class="toc-text">3.4 主存储器与CPU的连接</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-2-%E4%B8%BB%E5%AD%98%E5%AE%B9%E9%87%8F%E7%9A%84%E6%89%A9%E5%B1%95"><span class="toc-number">4.1.4.1.</span> <span class="toc-text">3.4.2 主存容量的扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E5%AD%97%E6%89%A9%E5%B1%95"><span class="toc-number">4.1.4.1.1.</span> <span class="toc-text">2.字扩展</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-%E5%8F%8C%E7%AB%AF%E5%8F%A3RAM%E5%92%8C%E5%A4%9A%E6%A8%A1%E5%9D%97%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">4.1.5.</span> <span class="toc-text">3.5 双端口RAM和多模块存储器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-1-%E7%A8%8B%E5%BA%8F%E8%AE%BF%E9%97%AE%E7%9A%84%E5%B1%80%E9%83%A8%E6%80%A7%E5%8E%9F%E7%90%86"><span class="toc-number">4.1.5.1.</span> <span class="toc-text">3.6.1 程序访问的局部性原理</span></a></li></ol></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="footer_custom_text"><p><a style="margin-inline:5px"target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为 Hexo" alt="HEXO"></a><a style="margin-inline:5px"target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用 Butterfly" alt="Butterfly"></a><a style="margin-inline:5px"target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由 GitHub 托管" alt="GitHub"></a><a style="margin-inline:5px"target="_blank"href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" alt="img" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><script async src="//at.alicdn.com/t/font_2264842_3izu8i5eoc2.js"></script><script async src="/js/custom.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

@@ -1,0 +1,875 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>操作系统 | 不会码字的程序猿</title><meta name="author" content="FeiLong"><meta name="copyright" content="FeiLong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="网络基础 计算机网络的基本概念从三个角度定义：   应用角度：强调资源共享和独立功能 物理角度：强调网络协议和硬件设备的组成 功能角度：强调通信手段和互联互通能力   计算机网络的发展经历了三个阶段：  以主机为中心的终端系统  以通信子网为中心的计算机互连  标准化的网络体系结构     计算机网络的术语包括： 通信子网：传输网络，提供信息传输服务。 资源子网：主机集合，提供计算资源 边缘部分：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统">
+<meta property="og:url" content="https://a186232641.github.io/2024/11/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.html">
+<meta property="og:site_name" content="不会码字的程序猿">
+<meta property="og:description" content="网络基础 计算机网络的基本概念从三个角度定义：   应用角度：强调资源共享和独立功能 物理角度：强调网络协议和硬件设备的组成 功能角度：强调通信手段和互联互通能力   计算机网络的发展经历了三个阶段：  以主机为中心的终端系统  以通信子网为中心的计算机互连  标准化的网络体系结构     计算机网络的术语包括： 通信子网：传输网络，提供信息传输服务。 资源子网：主机集合，提供计算资源 边缘部分：">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://a186232641.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2024-11-20T12:43:00.000Z">
+<meta property="article:modified_time" content="2024-11-24T05:17:41.853Z">
+<meta property="article:author" content="FeiLong">
+<meta property="article:tag" content="程序猿">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://a186232641.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://a186232641.github.io/2024/11/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '操作系统',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-11-24 13:17:41'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/banner.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="不会码字的程序猿"><span class="site-name">不会码字的程序猿</span></a></span><div id="menus"></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">操作系统</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-11-20T12:43:00.000Z" title="发表于 2024-11-20 20:43:00">2024-11-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-11-24T05:17:41.853Z" title="更新于 2024-11-24 13:17:41">2024-11-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="操作系统"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="网络基础"><a href="#网络基础" class="headerlink" title="网络基础"></a>网络基础</h1><ol>
+<li>计算机网络的基本概念从三个角度定义：</li>
+</ol>
+<ul>
+<li>应用角度：强调资源共享和独立功能</li>
+<li>物理角度：强调网络协议和硬件设备的组成</li>
+<li>功能角度：强调通信手段和互联互通能力</li>
+</ul>
+<ol start="2">
+<li><p>计算机网络的发展经历了三个阶段：</p>
+<ul>
+<li><p>以主机为中心的终端系统</p>
+</li>
+<li><p>以通信子网为中心的计算机互连</p>
+</li>
+<li><p>标准化的网络体系结构</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="计算机网络的术语包括："><a href="#计算机网络的术语包括：" class="headerlink" title="计算机网络的术语包括："></a>计算机网络的术语包括：</h3><ul>
+<li>通信子网：传输网络，提供信息传输服务。</li>
+<li>资源子网：主机集合，提供计算资源</li>
+<li>边缘部分：由<strong>所有连接在因特网上的主机</strong>组成。这部分用户直接使用，用来进行通信（传送数据、音频或视频）和资源共享</li>
+<li>核心部分：由<strong>大量网络和连接这些网络的路由器</strong>组成。这部分为边缘部分提供服务（提供连通性和交换）</li>
+</ul>
+<ol start="4">
+<li>结点、网络、主机</li>
+</ol>
+<ul>
+<li>网络：由若干结点和连接这些结点的链路组成</li>
+<li>互联网：互联网是”网络的网络”</li>
+<li>主机：连接在网上的计算机都称为主机</li>
+</ul>
+<h3 id="计算机网络主要由三大组成部分：硬件、软件、协议"><a href="#计算机网络主要由三大组成部分：硬件、软件、协议" class="headerlink" title="计算机网络主要由三大组成部分：硬件、软件、协议"></a>计算机网络主要由三大组成部分：硬件、软件、协议</h3><ol>
+<li>硬件<ul>
+<li>网络节点：包括端节点（计算机）和中间节点（交换机、集中器、复用器、路由器、中继器）</li>
+<li>通信链路：信息传输的通道，包括物理链路（传输介质）、逻辑链路（信道）</li>
+</ul>
+</li>
+<li>软件<ul>
+<li>包括各种实现<strong>资源共享</strong>的软件、为用户使用的各种工具软件</li>
+<li>主要有<strong>通信软件</strong>（网络协议软件）、<strong>网络操作系统</strong>、网络管理&#x2F;安全控制软件、网络应用软件</li>
+</ul>
+</li>
+<li>协议<ul>
+<li>是<strong>计算机网络的核心</strong></li>
+<li>协议规定了网络<strong>传输数据时所遵循的规则</strong></li>
+</ul>
+</li>
+</ol>
+<h3 id="计算机网络：功能"><a href="#计算机网络：功能" class="headerlink" title="计算机网络：功能"></a>计算机网络：功能</h3><ol>
+<li><strong>数据通信</strong><ul>
+<li>是计算机网络<strong>最基本和最重要的功能</strong></li>
+<li>用来实现联网计算机之间的各种信息传输</li>
+<li>实现将分散在不同地理位置的计算机联系起来</li>
+<li>进行统一的调配、控制和管理</li>
+<li>应用示例：文件传输、IP电话、email、视频会议、信息发布、交互式媒体、音乐</li>
+</ul>
+</li>
+<li>资源共享<ul>
+<li>包括软件共享、硬件共享、数据共享</li>
+<li>使计算机网络中的资源互通有无、分工协作</li>
+<li>从而极大地提高硬件资源、软件资源和数据资源的利用率</li>
+</ul>
+</li>
+<li>提供高可靠性服务<ul>
+<li>利用可替代的资源，提供连续的高可靠服务</li>
+</ul>
+</li>
+<li>节省资金<ul>
+<li>替代昂贵的大中型机系统</li>
+</ul>
+</li>
+<li>分布式处理<ul>
+<li>当计算机网络中的某个计算机系统负荷过重时</li>
+<li>可以将其处理的某个复杂任务分配给网络中其他计算机系统</li>
+<li>从而利用空闲计算机资源以提高整个系统的利用率</li>
+</ul>
+</li>
+<li>其它功能<ul>
+<li>实现电子化办公与服务</li>
+<li>远程教育</li>
+<li>娱乐等功能</li>
+<li>满足了社会的需求，方便了人们学习、工作和生活</li>
+<li>具有巨大的经济效益</li>
+</ul>
+</li>
+</ol>
+<h2 id="计算机网络分类"><a href="#计算机网络分类" class="headerlink" title="计算机网络分类"></a>计算机网络分类</h2><h3 id="按地理范围划分"><a href="#按地理范围划分" class="headerlink" title="按地理范围划分"></a>按地理范围划分</h3><ol>
+<li><p>广域网(WAN)</p>
+<ul>
+<li><p>范围：大、大于100KM</p>
+</li>
+<li><p>传输技术：宽带</p>
+</li>
+<li><p>通信质量：延迟大，出错率高</p>
+</li>
+<li><p>拓扑结构：不规则，<strong>点到点</strong>类型</p>
+</li>
+<li><p>是<strong>互联网的核心部分</strong>，任务是通过长距离运送主机所发送的数据</p>
+</li>
+</ul>
+</li>
+<li><p>城域网(MAN)</p>
+<ul>
+<li><p>范围：中等、小于100KM，<strong>一般是一个城市</strong>，可跨越几个街区甚至整个城市</p>
+</li>
+<li><p>传输技术：宽带、基带</p>
+</li>
+<li><p>拓扑结构：<strong>总线类型</strong></p>
+</li>
+</ul>
+</li>
+<li><p>局域网(LAN)</p>
+<ul>
+<li><p>范围：小、小于20KM</p>
+</li>
+<li><p>传输技术：基带，10-1000Mbps</p>
+</li>
+<li><p>通信质量：延迟低，出错率低（最低可达10⁻¹¹）</p>
+</li>
+<li><p><strong>拓扑结构：总线、环</strong></p>
+</li>
+<li><p>一般用微型计算机或工作站通过高速通信线路相连，地理上局限在较小的范围</p>
+</li>
+</ul>
+</li>
+<li><p>个域网(PAN)</p>
+<ul>
+<li><p>在个人工作的地方范围内的电子设备用无线技术连接起来，也称为<strong>无线个人区域网</strong>(WPAN)</p>
+</li>
+<li><p>范围很小，大约在10m左右</p>
+</li>
+<li><p>是一个<strong>低功率、小范围、低速率、低价格</strong>的电缆替代技术</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="按通信传播方式划分"><a href="#按通信传播方式划分" class="headerlink" title="按通信传播方式划分"></a>按通信传播方式划分</h3><ol>
+<li>点对点传输方式的网络<ol>
+<li>每条物理线路连接一对计算机，由一对对机器间的多条传输线路构成</li>
+<li>如果通信的两台主机之间没有直接连接的线路，那他们之间的分组传输就要通过中间节点的接收、存储和转发，直到目的节点。</li>
+<li>拓扑结构为网状、环形、树形、星形等</li>
+</ol>
+</li>
+<li>广播方式网络<ol>
+<li>一台计算机发送的信息可被网络上所有的计算机接收</li>
+<li>拓扑结构为总线形</li>
+</ol>
+</li>
+</ol>
+<h3 id="按拓扑结构划分"><a href="#按拓扑结构划分" class="headerlink" title="按拓扑结构划分"></a>按拓扑结构划分</h3><ol>
+<li>星形结构<ol>
+<li>网络有一个中心节点，其它节点与其构成点到点连接</li>
+<li>特点：容易实现：传输介质一般都是采用双绞线，节点扩展、移动方便：扩展只需从集线器或交换机等集中设备中拔除一条线即可，维护容易：一个节点出现故障不会影响其它节点的连接，可任意拆走故障节点。网络传输数据快：例如1000Mbps、甚至10G以太网。</li>
+</ol>
+</li>
+<li>树形结构<ol>
+<li>网络由一个根结点、多个中间分支节点和叶子节点构成</li>
+<li>信息交换主要在上下结点之间进行，相邻结点或同层结点之间一般不进行数据交换</li>
+<li>特点：连结简单，维护方便，适用于汇集信息的应用要求。资源共享能力较低，可靠性不高，任何一个工作站或链路的故障都会影响整个网络的运行</li>
+</ol>
+</li>
+<li>总线结构<ol>
+<li>网络所有节点挂接到一条总线上，各节点共用总线带宽，采用广播式信道，需要有介质访问控制规程以防止冲突。</li>
+<li>特点：组网费用低：不需要另外的互联设备，直接通过一条总线进行连接，扩展较灵活：需要扩展用户时只需要添加一个接线器即可，但所能连接的用户数量有限，维护容易：单个节点失效不影响整个网络的正常通信，但是如果总线一断，则整个网络或者相应主干网段就断了，一次仅能一个端用户发送数据，其他端用户必须等待到获得发送权。</li>
+</ol>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411241048890.png" alt="image-20241124104823398"></p>
+<ol start="4">
+<li><p>环形结构</p>
+<ol>
+<li>所有节点连接成一个闭合的环，<strong>结点之间为点到点连接</strong></li>
+<li>一般仅适用于令牌网，<strong>传输介质一般是同轴电缆</strong></li>
+<li>实现简单，投资小，功能简单，仅能当作一般的文件服务模式</li>
+<li>环中数据只能单向传输，信息在每台设备上的延迟时间是固定的，特别适合实时控制的局域网系统</li>
+<li>维护困难，扩展性能差：添加或移动节点时必须中断整个网络，在环的两端作好连接器才能连接</li>
+</ol>
+</li>
+<li><p>全连接结构：<strong>点到点全连接</strong>，可靠性最高，建造成本也高，只适用于节点数很少的广域网中。</p>
+</li>
+<li><p>网状结构</p>
+<ol>
+<li>点到点部分连接</li>
+<li>多用于广域网，由于连接的不完全性，需要有交换节点</li>
+<li>系统可靠性高，比较容易扩展</li>
+<li>结构复杂，每一结点都与多点进行连结</li>
+<li>因此必须采用路由算法和流量控制方法</li>
+<li>目前<strong>广域网基本上采用网状结构</strong></li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411241053576.png" alt="image-20241124105305001"></p>
+</li>
+</ol>
+<h1 id="网络体系结构"><a href="#网络体系结构" class="headerlink" title="网络体系结构"></a>网络体系结构</h1><h3 id="计算机网络的分层结构"><a href="#计算机网络的分层结构" class="headerlink" title="计算机网络的分层结构"></a>计算机网络的分层结构</h3><ol>
+<li><p>分层</p>
+<ol>
+<li>结构清晰，简化设计与实现，便于更新与维护</li>
+<li>使独立性和适应性增强，每层通过自己内部的功能实现一种特定的服务，并且只依赖自己的下层提供的服务</li>
+</ol>
+</li>
+<li><p>分层原则</p>
+<ol>
+<li>各个层之间有清晰的边界，便于理解</li>
+<li>每个层实现特定的功能，功能尽可能独立。当某一层具体实现方法更新时，只要保持上下层的接口不变，便不会对相邻层产生影响</li>
+<li>层次的划分有利于国际标准协议的制定</li>
+<li>层的数目应该适中：层数太少，每层协议太复杂，层数太多，则体系结构太复杂。</li>
+</ol>
+</li>
+<li><p>计算机网络体系结构</p>
+<ol>
+<li>计算机网络中，<strong>层、协议和层间接口的集合被称为计算机网络体系结构</strong></li>
+<li>分层结构与每层的功能</li>
+<li>服务与层间接口</li>
+<li>协议</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411241059255.png" alt="image-20241124105938454"></p>
+</li>
+</ol>
+<h3 id="协议、接口、服务"><a href="#协议、接口、服务" class="headerlink" title="协议、接口、服务"></a>协议、接口、服务</h3><ol>
+<li>实体(Entity)<ol>
+<li>定义：<strong>任何可以发送或接收信息的硬件或软件进程</strong>。这可以是具体的硬件设备，也可以是软件程序</li>
+</ol>
+</li>
+<li>对等层(Peer Layer)<ol>
+<li>两个不同系统的同级层次</li>
+</ol>
+</li>
+<li>对等实体(Peer Entity)<ol>
+<li>分别位于<strong>不同系统对等层中的两个实体</strong></li>
+<li>对等实体之间可以进行通信和信息交换</li>
+</ol>
+</li>
+<li>接口：相邻两层之间交互的界面，定义<strong>相邻两层之间的操作及下层对上层的服务</strong>。</li>
+<li>服务：<strong>某一层及其以下各层的一种能力</strong>，通过<strong>接口提供给其相邻上层</strong>。</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411241101573.png" alt="image-20241124110152941"></p>
+<h4 id="协议的三个要素"><a href="#协议的三个要素" class="headerlink" title="协议的三个要素"></a>协议的三个要素</h4><ol>
+<li>语义：解释控制信息<strong>每个部分的意义</strong>，规定了需要发出<strong>何种控制信息</strong>以及完成的动作与响应</li>
+<li>语法：是用户数据与控制信息的<strong>结构与格式</strong></li>
+<li><strong>时序</strong>：是对事件发生顺序的详细说明（也可称为”<strong>同步</strong>“）</li>
+</ol>
+<h3 id="协议数据单元"><a href="#协议数据单元" class="headerlink" title="协议数据单元"></a>协议数据单元</h3><ol>
+<li>概念:网络体系结构中，<strong><em>对等层</em>之间交换的信息报文</strong>统称为协议数据单元（PDU）</li>
+<li>组成:PDU由<strong>协议控制信息</strong>（协议头）和<em><strong>数据</strong></em>（SDU）组成</li>
+<li>协议控制信息:地址,序号,长度,分段标志,差错控制信息等.</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411241106401.png" alt="image-20241124110621993"></p>
+<ol start="4">
+<li>各层协议数据单元的名称<ol>
+<li>传输层以上：报文（Message）</li>
+<li>传输层：段（Segment）</li>
+<li>网络层：分组或包（Packet）</li>
+<li>数据链路层：帧（Frame）</li>
+<li>物理层：比特（Bit）</li>
+</ol>
+</li>
+</ol>
+<h3 id="协议数据传送过程"><a href="#协议数据传送过程" class="headerlink" title="协议数据传送过程"></a>协议数据传送过程</h3><ol>
+<li><p>PDU的封装过程</p>
+<ol>
+<li>下层把上层的PDU作为本层的数据(SDU)加以封装</li>
+<li>然后加入本层的协议头部（和尾部）</li>
+<li>形成本层的PDU</li>
+</ol>
+</li>
+<li><p>数据的封装与拆封过程</p>
+<ol>
+<li>数据在源站<strong>自上而下递交的过程实际上就是不断封装的过程</strong></li>
+<li>到达目的地后<strong>自下而上递交的过程就是不断拆封的过程</strong></li>
+</ol>
+</li>
+<li><p>每一层只处理本层的协议头部</p>
+</li>
+<li><p>通信过程的关键特点</p>
+<ol>
+<li><strong>通信只在对等层间进行</strong>，非对等层之间不能互相”通信”</li>
+<li>对等层实体之间实现的是<strong>虚拟的逻辑通信</strong>（间接的、逻辑的、虚拟的）</li>
+<li><em><strong>下层向上层提供服务</strong></em></li>
+<li><em><strong>上层依赖下层提供的服务</strong></em>来与其它主机上的对等层通信</li>
+<li>实际通信在最底层完成</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411241113585.png" alt="image-20241124111309361"></p>
+</li>
+</ol>
+<h3 id="两种体系结构"><a href="#两种体系结构" class="headerlink" title="两种体系结构"></a>两种体系结构</h3><h4 id="ISO-OSI标准体系结构"><a href="#ISO-OSI标准体系结构" class="headerlink" title="ISO&#x2F;OSI标准体系结构"></a>ISO&#x2F;OSI标准体系结构</h4><p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411241115239.png" alt="image-20241124111458942"></p>
+<ol>
+<li><p>物理层</p>
+<ol>
+<li><p>在物理媒体上正确地、透明地传送比特流</p>
+</li>
+<li><p>主要定义两种设备：</p>
+<ol>
+<li>数据终端设备(DTE)</li>
+<li>数据通信设备(DCE)的物理和逻辑连接方法</li>
+</ol>
+</li>
+<li><p>机械特性，电气特性，功能特性，过程特性</p>
+</li>
+</ol>
+</li>
+<li><p>数据链路层</p>
+<ol>
+<li>在两个相邻节点间传输数据，使之对网络层呈现为一条无错的链路</li>
+<li>主要功能与服务：<ol>
+<li>建立与拆除数据链路连接</li>
+<li>组帧（帧封装，按顺序传送，处理返回的确认帧）</li>
+<li>定界与同步（产生&#x2F;识别帧边界）</li>
+<li><strong>差错检测&#x2F;恢复</strong></li>
+<li><strong>流量控制</strong></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>网络层</p>
+<ol>
+<li>定义了能<strong>够标识所有结点的逻辑地址、路由实现的方式和学习的方式</strong></li>
+<li>选择合适的路由，<strong>把分组从源端传送到目的端</strong></li>
+<li>主要功能：<ul>
+<li>流量控制：协调A的<strong>发送速度和B的接收速度</strong></li>
+<li>差错控制：通信两结点之间约定特定的检错规则</li>
+<li>拥塞控制：<strong>当网络处于拥塞状态时，采取措施缓解拥塞</strong></li>
+<li>异构网络的连接：<strong>大量的异构网络通****过路由器相互连接起来</strong></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>传输层</p>
+<ol>
+<li>在源端与目的端之间提供可靠的透明数据传输</li>
+<li>使上层服务用户不必关系通信子网的细节</li>
+<li>主要功能：</li>
+<li>地址映射：源端进程地址映射到网络地址</li>
+<li>多路复用与分用：<ol>
+<li>多个传输连接共用一条网络连接</li>
+<li>一条传输连接使用多个网络连接</li>
+<li>进行数据分段并在目的端重新组装 </li>
+<li>传输连接的建立与释放：提供”面向连接”和”无连接”两种服务 </li>
+<li>传输差错校验与恢复 </li>
+<li>流量控制：防止数据传输过载</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>会话层</p>
+<ol>
+<li><p>允许不同主机上各进程之间的会话</p>
+</li>
+<li><p>利用传输层提供的端到端服务，向表示层提供增值服务</p>
+</li>
+<li><p>主要功能：</p>
+<ul>
+<li><p>建立同步：向表示层或用户进程提供建立连接并在连接上有序地传输数据</p>
+</li>
+<li><p>负责<strong>管理主机间的会话进程</strong></p>
+</li>
+<li><p>包括<strong>建立、管理以及终止进程间的会话</strong></p>
+</li>
+<li><p>使用校验点可使通信会话在通信失效时从校验点恢复通信，实现数据同步</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>表示层</p>
+<ol>
+<li>主要用于处理两个通信系统中<strong>交换信息的表示方式</strong></li>
+<li>处理不同机器采用的编码和表示方法不同的问题</li>
+<li>主要功能：</li>
+</ol>
+<ul>
+<li><p>采用抽象的标准方法定义数据结构</p>
+</li>
+<li><p>采用标准的编码形式</p>
+</li>
+<li><p>提供数据压缩、加密和解密服务</p>
+</li>
+<li><p>关心面向应用的信息的语法和语义</p>
+</li>
+</ul>
+</li>
+<li><p>应用层</p>
+</li>
+</ol>
+<h3 id="TCP-IP体系结构"><a href="#TCP-IP体系结构" class="headerlink" title="TCP&#x2F;IP体系结构"></a>TCP&#x2F;IP体系结构</h3><p>TCP&#x2F;IP协议采用4层体系结构，由下向上依次是：网络接口层，网际层，传输层，应用层，网络接口层</p>
+<p><img src="https://raw.githubusercontent.com/a186232641/images/master/img/202411241308473.png" alt="image-20241124130838141"></p>
+<ol>
+<li>网络接口层<ol>
+<li>是TCP&#x2F;IP模型的最底层，负责从主机或结点接收IP分组并将它们发送到指定物理网路上</li>
+<li>相当于OSI参考模型的物理层和数据链路层</li>
+<li>TCP&#x2F;IP标准并没有定义具体的网络接口协议，旨在提供灵活性</li>
+<li>各物理网络可以使用自己的数据链路层协议和物理层协议</li>
+<li>典型的物理网络类型：<ul>
+<li>局域网：以太网、令环网、令牌总线网等</li>
+<li>公共数据网络：电话网、SDH、X.25、帧中继和ATM等</li>
+</ul>
+</li>
+<li>典型协议包括<ol>
+<li>HDLC协议（高级数据链路控制协议）</li>
+<li>PPP协议（点到点协议）</li>
+<li>STP生成树协议</li>
+<li>FR（帧中继协议）</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>网际层<ol>
+<li>主要功能是消息寻址及把逻辑地址和名称转换成物理地址</li>
+<li>通过判定从源计算机到目标计算机的路由</li>
+<li>控制通信子网的操作</li>
+<li>常用协议<ol>
+<li>网络协议（IP）</li>
+<li>网络控制报文协议ICMP</li>
+<li>地址转换协议ARP</li>
+<li>反向地址转换协议RARP</li>
+<li>路由协议OSPF等</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>传输层<ol>
+<li>主要功能是提供从一个应用程序（进程）到另一个应用程序（进程）的通信称为<strong>端对端的通信</strong></li>
+<li><strong>端到端的通信</strong>实际是指从源进程发送数据到目标进程的通信过程</li>
+</ol>
+</li>
+<li>传输层<ol>
+<li>UDP协议（用户数据报协议）<ol>
+<li>为应用程序提供一种无需建立连接就可以发送封装的IP数据报的方法</li>
+<li>特点：无连接、不可靠</li>
+</ol>
+</li>
+<li>TCP协议（传输控制协议）<ol>
+<li>是一种面向连接的、可靠的、基于字节流的传输层通信协议</li>
+<li>特点：面向连接、可靠传输、字节流传输</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>应用层<ol>
+<li>FTP（文件传输协议）</li>
+<li>Telnet（远程登录协议）</li>
+<li>DNS（域名服务）</li>
+<li>SMTP（简单邮件传输协议）</li>
+<li>HTTP（超文件传输协议）</li>
+</ol>
+</li>
+</ol>
+<h3 id="TCP-IP与OSI模型比较"><a href="#TCP-IP与OSI模型比较" class="headerlink" title="TCP&#x2F;IP与OSI模型比较"></a>TCP&#x2F;IP与OSI模型比较</h3><ol>
+<li>二者都采取分层的体系结构<ul>
+<li>将庞大且复杂的问题划分为若干个较容易处理的、范围较小的问题</li>
+<li>各层的功能也大体相似</li>
+</ul>
+</li>
+<li>二者都是基于独立的协议的概念</li>
+<li>二者都可以解决异构网络的互联，实现世界上不同厂家生产的计算机之间的通信</li>
+</ol>
+<h1 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h1><p>将两台 PC 机通过网卡用网线直接连接，应该采用哪种类型的双绞线？</p>
+<p>以太网双绞连接线有两种：一种是广泛使用的直连接线，另一种是特殊情况下使用的交叉线，如果是pc连接交换机或其他网络接口等，或是其它连接的双方地位不对等的情况下都使用<strong>直连接线</strong>，而如果连接的两台设备是对等的，例如都是两台pc机，笔记本等，就要使用<strong>交叉线</strong>了，两者的差别是线序不一致，接口是一样的。 </p>
+<p> 标准568A：绿白-1，绿-2，橙白-3，蓝-4，蓝白-5，橙-6，棕白-7，棕-8。 </p>
+<p>  标准568B：橙白-1，橙-2，绿白-3，蓝-4，蓝白-5，绿-6，棕白-7，棕-8。 </p>
+<p>  两端都是568A或者568B的双绞线是直通线；一端是568A，一端是568B的双绞线是交叉线。</p>
+<p><strong>快速以太网</strong>是指100Mbps速率以上的<br>  单模光纤传输适合距离远，不会色散，传输可靠，但仅一个模式； </p>
+<p>  多模光纤传输适合短距离，可以多个模式传输，但会发生色散，不够可靠；</p>
+<p>串行通信：串行通信是指 使用一条数据线，将数据一位一位地依次传输，每一位数据占据一个固定的时间长度。其只需要少数几条线就可以在系统间交换信息，特别适用于计算机与计算机、计算机与外设之间的<strong>远距离通信</strong>。   </p>
+<p>​    并行是指多比特数据同时通过并行线进行传送，这样数据传送<strong>速度大大提高</strong>，但并行传送的线路长度受到限制，因为长度增加，干扰就会增加，数据也就容易出错。   </p>
+<p>路由器、网桥（交换机）和集线器分别工作于网络层、数据链路层和物理层</p>
+<p>路由器可以隔绝广播域，也可以隔绝冲突域，交换机只能隔绝冲突域，不能隔绝广播域。集线器只起信号发达和转发的作用。  </p>
+<p>交换机下不同的端口处于不同的冲突域中，但所有的端口都处于同一个广播域 </p>
+<p>  1、骨干网：它由所有用户共享，负责传输骨干数据流。 </p>
+<p>   2、接入网：提供通常说的最后一公里的连接——即用户和骨干网络之间的连接。 </p>
+<p>T1载波的数据速率是1.544Mbps</p>
+<p> E1载波的数据速率是2.048Mbps，<br> E2载波数据速率为8.448Mbps，<br> E3载波数据速率为34.368Mbps，<br> E4载波数据速率为139.24Mbps，<br> E5载波数据速率为565.148Mbps</p>
+<p>  电路交换具有以下优缺点： </p>
+<p>​    <strong>优点</strong>： （1）由于通信线路为通信双方用户专用，数据直达，所以传输数据的时延非常小。 （2）通信双方之间的屋里通路一旦建立，双方可以随时通信，实时性强。（3）双方通信时按发送顺序传送数据，不存在失序问题。（4）电路交换既适用于传输模拟信号，也适用于传输数字信号。（5）电路交换的交换设备及控制均比较简单。 </p>
+<p>​    分组交换具有以下优缺点。  </p>
+<p>​     <strong>优点</strong>：（1）分组交换不需要为通信双反预先建立一条专用的通信线路，不存在连接建立时延，用户可随时发送分组。（2）由于采用存储转发方式，加之交换节点具有路径选择，当某条传输线路故障时可选择其他传输线路，提高了传输的可靠性。（3）通信双反不是固定的战友一条通信线路，而是在不同的时间一段一段地部分占有这条物理通路，因而大大提高了通信线路的利用率。（4）加速了数据在网络中的传输。因而分组是逐个传输，可以使后一个分组的存储操作与前一个分组的转发操作并行，这种流水线式传输方式减少了传输时间。（5）分组长度固定，相应的缓冲区的大小也固定，所以简化了交换节点中存储器的管理。（6）分组较短，出错几率减少，每次重发的数据量也减少，不仅提高了可靠性，也减少了时延。  </p>
+<p>同轴电缆 只能数字信号。</p>
+<p>  双绞线（twisted pair，TP） 双绞线，模拟信号，数字信号。传输距离最多100m，与同轴电缆相比，双绞线易受外部电磁波的干扰，线路本身也产生噪声，误码率较高</p>
+<p>  屏蔽双绞线（英语：Shielded Twisted Pair，STP）,是一种广泛用于数据传输的铜质双绞线可以抗电磁干扰。 </p>
+<p>  非屏蔽双绞线(UTP：Unshilded Twisted Pair) </p>
+<p>光纤比屏蔽双绞线要好抗电磁干扰</p>
+<p>Cisco路由器用于查看路由表信息的命令是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">show run//看运行状况</span><br><span class="line">show ip route//看路由表 show int//看断口*</span><br><span class="line">show ip int br//看端口ip地址 show cdp nei//察看cdp邻居</span><br><span class="line">show ip pro//察看ip协议</span><br></pre></td></tr></table></figure>
+
+<p>曼彻斯特编码的核心特点：</p>
+<ol>
+<li>编码规则：</li>
+</ol>
+<ul>
+<li>1：高到低电平跳变</li>
+<li>0：低到高电平跳变</li>
+<li>每个码元中间必有跳变</li>
+</ul>
+<ol>
+<li>技术特点：</li>
+</ol>
+<ul>
+<li>自同步(信号跳变提供时钟)</li>
+<li>无直流分量</li>
+<li>便于检错(每位必有跳变)</li>
+</ul>
+<ol>
+<li>缺点：</li>
+</ol>
+<ul>
+<li>带宽占用大(是基带的2倍)</li>
+<li>传输距离受限</li>
+</ul>
+<ol>
+<li>改进版本： 差分曼彻斯特编码：用跳变的有无表示数据，抗干扰能力更强</li>
+</ol>
+<p>主要应用于以太网802.3标准和令牌环网络。</p>
+<p>10BASE-T采用的物理拓扑结构是星型，逻辑拓扑结构是总线型 </p>
+<p>100BASE-T 是逻辑物理都是星型结构 </p>
+<p>450MHz系统：误差不得超过5×10^-6 (即20ppm) 900MHz系统：误差不得超过3×10^-6 (即4ppm)</p>
+<h1 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h1><p>以太网的协议结构包括理层、数据链路层   数据链路层分层为逻辑链路控制子层（LLC）和媒体访问控制子层(MAC)。不同的物理层对应不同的MAC子层，LLC子层则完全独立。</p>
+<p>ADSL(非对称数字用户线)是一种利用现有电话线路进行数据传输的宽带技术。其特点是:</p>
+<ol>
+<li>非对称传输:下行速率(最高24Mbps)远大于上行速率(最高1Mbps)</li>
+<li>**频分复用:**：异步传输</li>
+</ol>
+<ul>
+<li>低频段(0-4KHz):传输语音</li>
+<li>中频段:上行数据</li>
+<li>高频段:下行数据</li>
+</ul>
+<ol>
+<li>通过电话线传输,无需重新布线,适合家庭宽带使用</li>
+</ol>
+<p>主要优点是可复用现有电话线路,成本低,但传输距离受限(通常不超过5.5公里)。</p>
+<p>MAC地址也叫物理地址、硬件地址或链路地址，MAC地址则是48位的，IP地址才是32位的</p>
+<p>MAC 地址是由 48 位二进制数组成，通常表示为 12 个十六进制数，每两个十六进制数为一组，中间用冒号或减号分隔。   </p>
+<p><strong>网桥</strong>连接不同网段，是数据链路层设备，可以隔绝碰撞域    </p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20200217/969156946_1581908541437_131FA92C75D60B62AFCDCCF2872A039F" alt="img"></p>
+<p>数据链路层一般都提供3种基本服务，即无确认的无连接服务、有确认的无连接服务、有确认 的面向连接的服务。 </p>
+<p>  （1）无确认的无连接服务 无确认的无连接服务是源机器向目的机器发送独立的帧，而目的机器对收到的帧不作确认。 如果由于线路上的噪声而造成帧丢失，数据链路层不作努力去恢复它，恢复工作留给上层去完成。 这类服务适用于误码率很低的情况，也适用于像语音之类的实时传输，实时传输情况下有时数据延误比数据损坏影响更严重。 大多数局域网在数据链路层都使用无确认的无连接服务。 </p>
+<p>  （2）有确认的无连接服务 这种服务仍然不建立连接，但是所发送的每一帧都进行单独确认。 以这种方式，发送方就会知道帧是否正确地到达。如果在某个确定的时间间隔内，帧没有到达，就必须重新发此帧。  </p>
+<p>  （3）有确认的面向连接的服务 采用这种服务，源机器和目的机器在传递任何数据之前，先建立一条连接。 在这条连接上所发送的每一帧都被编上号，数据链路层保证所发送的每一帧都确实已收到。 而且，它保证每帧只收到一次，所有的帧都是按正确顺序收到的。面向连接的服务为网络进程间提供了可靠地传送比特流的服务。</p>
+<p> IEEE 802.1—概述、体系结构和网络互连，以及网络管理和性能测量。</p>
+<p> IEEE 802.2—逻辑链路控制LLC。最高层协议与任何一种局域网MAC子层的接口。</p>
+<p> IEEE 802.3—CSMA&#x2F;CD网络，定义CSMA&#x2F;CD总线网的MAC子层和物理层的规范。</p>
+<p> IEEE 802.4—令牌总线网。定义令牌传递总线网的MAC子层和物理层的规范。</p>
+<p> IEEE 802.5—令牌环形网。定义令牌传递环形网的MAC子层和物理层的规范。</p>
+<p> IEEE 802.6—城域网。</p>
+<p> IEEE 802.7—宽带技术。</p>
+<p> IEEE 802.8—光纤技术。</p>
+<p> IEEE 802.9—综合话音数据局域网。</p>
+<p> IEEE 802.10—可互操作的局域网的安全。</p>
+<p> IEEE 802.11—无线局域网。</p>
+<p> IEEE 802.12—优先高速局域网(100Mb&#x2F;s)。</p>
+<p> IEEE 802.13—有线电视(Cable-TV)</p>
+<h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><p>逆地址解析协议（Reverse Address Resolution Protocol，RARP），是一种网络协议，互联网工程任务组（IETF）在RFC903中描述了RARP[1]。RARP使用与ARP相同的报头结构，作用与ARP相反。RARP用于将MAC地址转换为IP地址。其因为较限于IP地址的运用以及其他的一些缺点，因此渐为更新的BOOTP或DHCP所取代。<br>RARP的工作原理：</p>
+<p>ARP和RARP属于网络层协议。但是工作内容属于数据链路层。 </p>
+<ol>
+<li>发送主机发送一个本地的RARP广播，在此广播包中，声明自己的MAC地址并且请求任何收到此请求的RARP服务器分配一个IP地址；</li>
+<li>本地网段上的RARP服务器收到此请求后，检查其RARP列表，查找该MAC地址对应的IP地址；</li>
+<li>如果存在，RARP服务器就给源主机发送一个响应数据包并将此IP地址提供给对方主机使用；</li>
+<li>如果不存在，RARP服务器对此不做任何的响应；</li>
+<li>源主机收到从RARP服务器的响应信息，就利用得到的IP地址进行通讯；如果一直没有收到RARP服务器的响应信息，表示初始化失败</li>
+</ol>
+<p><img src="https://uploadfiles.nowcoder.com/files/20200802/963196997_1596363041239_20200802181023.png" alt="img"></p>
+<p>IPv6首部的40字节包含以下字段：</p>
+<ul>
+<li>版本号：4位</li>
+<li>通信量类：8位</li>
+<li>流标签：20位</li>
+<li>有效载荷长度：16位</li>
+<li>下一个首部：8位</li>
+<li>跳数限制：8位</li>
+<li>源地址：128位（16字节）</li>
+<li>目的地址：128位（16字节）</li>
+</ul>
+<p>网络中的三大表 MAC表 链路层交换机维护，记录着MAC地址与交换机接口的对应关系&hellip; ARP表 主机维护，ARP协议是网络层协议，负责ip地址与mac地址的映射 路由表，这个大家都懂，可以用netstat -r 或route查看</p>
+<p>OSPF(Open Shortest Path First<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BC%80%E6%94%BE%E5%BC%8F%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E4%BC%98%E5%85%88">开放式最短路径优先</a>）是一个<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%86%85%E9%83%A8%E7%BD%91%E5%85%B3%E5%8D%8F%E8%AE%AE">内部网关协议</a>(Interior Gateway Protocol，简称IGP），用于在单一<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%87%AA%E6%B2%BB%E7%B3%BB%E7%BB%9F">自治系统</a>（autonomous system,AS）内决策<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%B7%AF%E7%94%B1">路由</a>。是对<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE">链路状态路由协议</a>的一种实现，隶属内部网关协议（IGP），故运作于自治系统内部。著名的迪克斯加算法(Dijkstra)被用来计算最短路径树。OSPF分为OSPFv2和OSPFv3两个版本,其中OSPFv2用在<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/IPv4">IPv4</a>网络，OSPFv3用在<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/IPv6">IPv6</a>网络。OSPFv2是由RFC 2328定义的，OSPFv3是由RFC 5340定义的。与<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/RIP">RIP</a>相比，OSPF是链路状态协议，而RIP是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%B7%9D%E7%A6%BB%E7%9F%A2%E9%87%8F%E5%8D%8F%E8%AE%AE">距离矢量协议</a>。</p>
+<p>OSPF（Open Shortest Path First打开最短路径）是内部网关协议。 BGP (Border Gateway Protocol边界网关协议)，是用于交换Internet路由信息的外部网关协议。 </p>
+<p>因特网采用的路由选择协议主要是自适应的（即动态的）、分布式路由选择协议。    </p>
+<p>网络层提供的是一种无连接、不可靠但尽力而为的数据报传输服务，将数据报从原主机传送到目的主机。</p>
+<p>A: 10.0.0.0~10.255.255.255 即10.0.0.0&#x2F;8 </p>
+<p>B:172.16.0.0~172.31.255.255即172.16.0.0&#x2F;12 </p>
+<p>C:192.168.0.0~192.168.255.255 即192.168.0.0&#x2F;16</p>
+<p>静态路由是指由用户或网络管理员手工配置的路由信息。当网络的拓扑结构或链路的状态发生变化时，网络管理员需要手工去修改路由表中相关的静态路由信息。 直接路由是指路由器各网络接口所直连的网络之间进行通信所使用的路由。直接路由是在配置完路由器网络接口的IP地址后自动生成的，因此，如果没有对这些接口进行特殊的限制，这些接口所直连的网络之间就可以直接通信。</p>
+<p>  局域网：以太网（Ethernet）、 令牌环网（Token Ring）、 光纤分布式接口网络（FDDI）环形拓扑、 异步传输模式网（ATM） 无线局域网（WLAN）。 </p>
+<p>  广域网：QoS，公用电话交换网(PSTN)、分组交换网（X.25）、数字数据网（DDN）、帧中继（FR）、交换式多兆数据服务（SMDS）、异步传输模式（ATM）（主要用于广域网），ISDN，ADSL </p>
+<p>  城域网：分布式队列双总线(DQDB) </p>
+<p>帧中继网络使用 LMI(本地管理接口)协议监控 PVC 的状态。</p>
+<p>LMI 协议主要功能：</p>
+<ol>
+<li>状态查询和通告</li>
+<li>PVC可达性验证</li>
+<li>拥塞通知</li>
+<li>多播</li>
+</ol>
+<p>LMI 协议类型：</p>
+<ul>
+<li>Cisco</li>
+<li>ANSI</li>
+<li>ITU-T Q.933</li>
+</ul>
+<h1 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h1><p><img src="https://uploadfiles.nowcoder.com/images/20170816/891535_1502864700025_4308DBEC28931D574B5E88B33BBCC75B" alt="img"></p>
+<p>UDP报头只有四个域：源端口号，目的端口号，数据报长度，检验和。</p>
+<h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><p>Telnet是位于OSI模型的第7层—应用层上的一种协议，是一个通过创建虚拟终端提供连接到远程主机终端仿真的TCP&#x2F;IP协议。这一协议需要通过用户名和口令进行认证，是Internet远程登陆服务的标准协议。应用Telnet协议能够把本地用户所使用的计算机变成远程主机系统的一个终端 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SMTP：简单邮件传输协议，使用TCP连接，端口号为25，</span><br><span class="line">SNMP：简单网络管理协议，使用UDP 161端口</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SNMP:(Simple Network Management Protocol)简单网络管理协议, 是专门设计用于在 IP 网络管理网络节点（服务器、工作站、路由器、交换机及HUBS等）的一种标准协议，它是一种应用层协议。 SNMP 使网络管理员能够管理网络效能，发现并解决网络问题以及规划网络增长。通过 SNMP 接收随机消息（及事件报告）网络管理系统获知网络出现问题。</span><br><span class="line">SNMP是一系列协议组和规范，它们提供了一种从网络上的设备中收集网络管理信息的方法，也为设备向网络管理工作站报告问题和错误提供了一种方法。</span><br></pre></td></tr></table></figure>
+
+<p><strong>SNMP基于传输层UDP用户数据报协议</strong>，在管理者和被管理设备（确切的说是agent）之前传递信息。<br>SNMP管理包括下面三个部分：<br>1.MIB管理信息库<br>2.SMI管理信息的结构和标识（也称管理信息接口SMI）<br>3.SNMP简单网络管理协议</p>
+<p>DNS：</p>
+<p>最少情况：当本机DNS高速缓存中有该域名的DNS信息时，则不需要查询任何域名服务器，最少发出0次DNS查询。最多情况：因为均采用迭代查询方式，在最坏情况下，本地域名服务器需要依次迭代地向根域名服务器、顶级域名服务器（.com）、权限域名服务器（xyz.com）、权限域名服务器（abc.xyz.com）发出DNS查询请求，因此最多发出4次DNS查询。  </p>
+<p>Socket通信中客户端和服务端的主要调用函数：</p>
+<p>服务端：</p>
+<ol>
+<li>socket() - 创建套接字</li>
+<li>bind() - 绑定地址</li>
+<li>listen() - 监听连接</li>
+<li>accept() - 接受连接</li>
+<li>recv()&#x2F;send() - 接收&#x2F;发送数据</li>
+<li>close() - 关闭连接</li>
+</ol>
+<p>客户端：</p>
+<ol>
+<li>socket() - 创建套接字</li>
+<li>connect() - 连接服务器</li>
+<li>send()&#x2F;recv() - 发送&#x2F;接收数据</li>
+<li>close() - 关闭连接</li>
+</ol>
+<p>1xx(临时响应)表示临时响应并需要请求者继续执行操作的状态代码。</p>
+<p> 100 (继续) 请求者应当继续提出请求。 服务器返回此代码表示已收到请求的第一部分，正在等待其余部分。</p>
+<p> 101 (切换协议) 请求者已要求服务器切换协议，服务器已确认并准备切换。</p>
+<p>   2xx (成功)表示成功处理了请求的状态代码。</p>
+<p> 200 (成功) 服务器已成功处理了请求。 通常，这表示服务器提供了请求的网页。</p>
+<p> 201 (已创建) 请求成功并且服务器创建了新的资源。</p>
+<p> 202 (已接受) 服务器已接受请求，但尚未处理。</p>
+<p> 203 (非授权信息) 服务器已成功处理了请求，但返回的信息可能来自另一来源。</p>
+<p> 204 (无内容) 服务器成功处理了请求，但没有返回任何内容。</p>
+<p> 205 (重置内容) 服务器成功处理了请求，但没有返回任何内容。</p>
+<p> 206 (部分内容) 服务器成功处理了部分 GET 请求。</p>
+<p>   3xx (重定向) 表示要完成请求，需要进一步操作。 通常，这些状态代码用来重定向。</p>
+<p> 300 (多种选择) 针对请求，服务器可执行多种操作。 服务器可根据请求者 (user agent) 选择一项操作，或提供操作列表供请求者选择。</p>
+<p> 301 (永久移动) 请求的网页已永久移动到新位置。 服务器返回此响应(对 GET 或 HEAD 请求的响应)时，会自动将请求者转到新位置。</p>
+<p> 302 (临时移动) 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。</p>
+<p> 303 (查看其他位置) 请求者应当对不同的位置使用单独的 GET 请求来检索响应时，服务器返回此代码。</p>
+<p> 304 (未修改) 自从上次请求后，请求的网页未修改过。 服务器返回此响应时，不会返回网页内容。</p>
+<p> 305 (使用代理) 请求者只能使用代理访问请求的网页。 如果服务器返回此响应，还表示请求者应使用代理。</p>
+<p> 307 (临时重定向) 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。</p>
+<p>   4xx(请求错误) 这些状态代码表示请求可能出错，妨碍了服务器的处理。</p>
+<p> 400 (错误请求) 服务器不理解请求的语法。</p>
+<p> 401 (未授权) 请求要求身份验证。 对于需要登录的网页，服务器可能返回此响应。</p>
+<p> 403 (禁止) 服务器拒绝请求。</p>
+<p> 404 (未找到) 服务器找不到请求的网页。</p>
+<p> 405 (方法禁用) 禁用请求中指定的方法。</p>
+<p> 406 (不接受) 无法使用请求的内容特性响应请求的网页。</p>
+<p> 407 (需要代理授权) 此状态代码与 401(未授权)类似，但指定请求者应当授权使用代理。</p>
+<p> 408 (请求超时) 服务器等候请求时发生超时。</p>
+<p> 409 (冲突) 服务器在完成请求时发生冲突。 服务器必须在响应中包含有关冲突的信息。</p>
+<p> 410 (已删除) 如果请求的资源已永久删除，服务器就会返回此响应。</p>
+<p> 411 (需要有效长度) 服务器不接受不含有效内容长度标头字段的请求。</p>
+<p> 412 (未满足前提条件) 服务器未满足请求者在请求中设置的其中一个前提条件。</p>
+<p> 413 (请求实体过大) 服务器无法处理请求，因为请求实体过大，超出服务器的处理能力。</p>
+<p> 414 (请求的 URI 过长) 请求的 URI(通常为网址)过长，服务器无法处理。</p>
+<p> 415 (不支持的媒体类型) 请求的格式不受请求页面的支持。</p>
+<p> 416 (请求范围不符合要求) 如果页面无法提供请求的范围，则服务器会返回此状态代码。</p>
+<p> 417 (未满足期望值) 服务器未满足”期望”请求标头字段的要求。</p>
+<p>   5xx(服务器错误)这些状态代码表示服务器在尝试处理请求时发生内部错误。 这些错误可能是服务器本身的错误，而不是请求出错。</p>
+<p> 500 (服务器内部错误) 服务器遇到错误，无法完成请求。</p>
+<p> 501 (尚未实施) 服务器不具备完成请求的功能。 例如，服务器无法识别请求方法时可能会返回此代码。</p>
+<p> 502 (错误网关) 服务器作为网关或代理，从上游服务器收到无效响应。</p>
+<p> 503 (服务不可用) 服务器目前无法使用(由于超载或停机维护)。 通常，这只是暂时状态。</p>
+<p> 504 (网关超时) 服务器作为网关或代理，但是没有及时从上游服务器收到请求。</p>
+<p> 505 (HTTP 版本不受支持) 服务器不支持请求中所用的 HTTP 协议版本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">DNS，Domain Name System或者Domain Name Service（域名系统或者余名服务）。域名系统为Internet上的主机分配域名地址和IP地址。用户使用域名地址，该系统就会自动把域名地址转为IP地址。 </span><br><span class="line">ADNS是硬件防火墙的意思. </span><br><span class="line">PDNS 本身是一个支持 mysql 数据库的 dns 服务器。</span><br><span class="line"></span><br><span class="line">TFTP 使用UDP</span><br><span class="line">FTP 使用TCP</span><br><span class="line">在给FTP服务器设计ACL时，在控制方面，端口号为21，一般用于登录认证，在数据传输方面，若为主动模式，则端口号为20；若为被动模式，则由服务端和客户端协商而定</span><br></pre></td></tr></table></figure>
+
+<h1 id="网络安全"><a href="#网络安全" class="headerlink" title="网络安全"></a>网络安全</h1><p>**MITM:**通过各种技术手段将受入侵者控制的一台计算机虚拟放置在网络连接中的两台通信计算机之间，这台计算机就称为“中间人”。 </p>
+<p>  <strong>钓鱼攻击：</strong>一种企图从电子通讯中，<strong>通过伪装成信誉卓著的法人媒体以获得如用户名、密码和信用卡明细等个人敏感信息的犯罪诈骗过程。</strong>这些通信都声称（自己）来自社交网站拍卖网站\网络银行、电子支付网站\或网络管理者，以此来诱骗受害人的轻信。网钓通常是通过e-mail或者即时通讯进行。它常常导引用户到URL与界面外观与真正网站几无二致的假冒网站输入个人数据。就算使用强式加密的SSL服务器认证，要侦测网站是否仿冒实际上仍很困难。 </p>
+<p>  <strong>水坑攻击</strong>：在受害者必经之路设置了一个“**水坑(陷阱)**”。最常见的做法是，黑客分析攻击目标的上网活动规律，寻找攻击目标经常访问的网站的弱点，先将此网站“攻破”并植入攻击代码，一旦攻击目标访问该网站就会“中招”。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://a186232641.github.io">FeiLong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://a186232641.github.io/2024/11/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">https://a186232641.github.io/2024/11/20/计算机网络/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://a186232641.github.io" target="_blank">不会码字的程序猿</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/11/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" title="计算机组成原理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">计算机组成原理</div></div></a></div><div class="next-post pull-right"><a href="/2024/11/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%90%86%E8%AE%BA/" title="数据库理论"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">数据库理论</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">FeiLong</div><div class="author-info__description">这是我的博客网站</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/a186232641"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/a186232641" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:a186232641@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">网络基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E6%9C%AF%E8%AF%AD%E5%8C%85%E6%8B%AC%EF%BC%9A"><span class="toc-number">1.0.1.</span> <span class="toc-text">计算机网络的术语包括：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%BB%E8%A6%81%E7%94%B1%E4%B8%89%E5%A4%A7%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86%EF%BC%9A%E7%A1%AC%E4%BB%B6%E3%80%81%E8%BD%AF%E4%BB%B6%E3%80%81%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.0.2.</span> <span class="toc-text">计算机网络主要由三大组成部分：硬件、软件、协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%EF%BC%9A%E5%8A%9F%E8%83%BD"><span class="toc-number">1.0.3.</span> <span class="toc-text">计算机网络：功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.</span> <span class="toc-text">计算机网络分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E5%9C%B0%E7%90%86%E8%8C%83%E5%9B%B4%E5%88%92%E5%88%86"><span class="toc-number">1.1.1.</span> <span class="toc-text">按地理范围划分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E9%80%9A%E4%BF%A1%E4%BC%A0%E6%92%AD%E6%96%B9%E5%BC%8F%E5%88%92%E5%88%86"><span class="toc-number">1.1.2.</span> <span class="toc-text">按通信传播方式划分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84%E5%88%92%E5%88%86"><span class="toc-number">1.1.3.</span> <span class="toc-text">按拓扑结构划分</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">2.</span> <span class="toc-text">网络体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%88%86%E5%B1%82%E7%BB%93%E6%9E%84"><span class="toc-number">2.0.1.</span> <span class="toc-text">计算机网络的分层结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE%E3%80%81%E6%8E%A5%E5%8F%A3%E3%80%81%E6%9C%8D%E5%8A%A1"><span class="toc-number">2.0.2.</span> <span class="toc-text">协议、接口、服务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE%E7%9A%84%E4%B8%89%E4%B8%AA%E8%A6%81%E7%B4%A0"><span class="toc-number">2.0.2.1.</span> <span class="toc-text">协议的三个要素</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE%E6%95%B0%E6%8D%AE%E5%8D%95%E5%85%83"><span class="toc-number">2.0.3.</span> <span class="toc-text">协议数据单元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%E8%BF%87%E7%A8%8B"><span class="toc-number">2.0.4.</span> <span class="toc-text">协议数据传送过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">2.0.5.</span> <span class="toc-text">两种体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ISO-OSI%E6%A0%87%E5%87%86%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">2.0.5.1.</span> <span class="toc-text">ISO&#x2F;OSI标准体系结构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-IP%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">2.0.6.</span> <span class="toc-text">TCP&#x2F;IP体系结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-IP%E4%B8%8EOSI%E6%A8%A1%E5%9E%8B%E6%AF%94%E8%BE%83"><span class="toc-number">2.0.7.</span> <span class="toc-text">TCP&#x2F;IP与OSI模型比较</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82"><span class="toc-number">3.</span> <span class="toc-text">物理层</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="toc-number">4.</span> <span class="toc-text">数据链路层</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="toc-number">5.</span> <span class="toc-text">网络层</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="toc-number">6.</span> <span class="toc-text">传输层</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82"><span class="toc-number">7.</span> <span class="toc-text">应用层</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8"><span class="toc-number">8.</span> <span class="toc-text">网络安全</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="footer_custom_text"><p><a style="margin-inline:5px"target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为 Hexo" alt="HEXO"></a><a style="margin-inline:5px"target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用 Butterfly" alt="Butterfly"></a><a style="margin-inline:5px"target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由 GitHub 托管" alt="GitHub"></a><a style="margin-inline:5px"target="_blank"href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" alt="img" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><script async src="//at.alicdn.com/t/font_2264842_3izu8i5eoc2.js"></script><script async src="/js/custom.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
